@@ -85,7 +85,7 @@
   box-sizing: border-box;
   z-index: 2;
   background: transparent;
-  overflow: hidden;
+  overflow: visible;
 }
 .bzr-col { flex-direction: column; }
 .bzr-row { flex-direction: row;    }
@@ -100,7 +100,7 @@
 }
 
 /* All other direct canvas children sit above the doodle */
-.bzr-canvas > *:not(.bzr-doodle) {
+.bzr-canvas > *:not(.bzr-doodle):not(.bzr-slide-footer) {
   position: relative;
   z-index: 1;
 }
@@ -113,6 +113,11 @@
 .bzr-doodle polygon {
   stroke-opacity: 1 !important;
   fill-opacity:   1 !important;
+}
+
+/* Soft off-white for light slides (easier on projectors) */
+.bzr-slide-light {
+  background-color: #F5F7F8 !important;
 }
 
 /* Class-based opacity */
@@ -181,66 +186,48 @@
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.3);
+  color: var(--c-amber);
   display: flex; align-items: center; gap: 6px;
   pointer-events: none;
 }
-#bzr-counter #bzr-cur { color: var(--c-amber); }
-.bzr-dash { color: rgba(255,255,255,0.18); }
+.bzr-dash { color: var(--c-amber); }
 
 /* ================================================================
    LOGO FOOTER (injected by JS)
 ================================================================ */
 .bzr-slide-footer {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
+  bottom: 0;
+  left: 110px;
+  right: 110px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0;
   z-index: 10;
-  border-top: 1px solid rgba(0, 0, 0, 0.07);
-  background: rgba(255,255,255,0.96);
+  background: #0D2B31;
+  border-radius: 0;
+  padding: 0 40px;
+  width: auto;
+  transform: none;
 }
 .bzr-footer-logo {
-  height: 18px; width: auto;
+  height: 28px; width: auto;
   object-fit: contain;
-  opacity: 0.65;
-  filter: grayscale(0.15);
+  opacity: 1;
+  filter: brightness(0) invert(1);
   transition: opacity 0.2s, filter 0.2s;
 }
-.bzr-footer-logo:hover { opacity: 1; filter: none; }
 .bzr-footer-sep {
   width: 1px; height: 20px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.2);
   margin: 0 18px;
-}
-
-/* ── Footer on dark slides ── */
-.slide-dark-footer .bzr-slide-footer,
-[data-background-color="#0D2B31"] .bzr-slide-footer,
-[data-background-color="#016B78"] .bzr-slide-footer {
-  background: rgba(13,43,49,0.88);
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-[data-background-color="#0D2B31"] .bzr-footer-logo,
-[data-background-color="#016B78"] .bzr-footer-logo {
-  filter: brightness(0) invert(1);
-  opacity: 0.55;
 }
 
 /* ================================================================
    SHARED PRIMITIVES
 ================================================================ */
-
-/* Amber left bar */
-.bzr-accent-bar {
-  width: 7px;
-  align-self: stretch;
-  background: var(--c-amber);
-  flex-shrink: 0;
-}
 
 /* Content body for bar-layout slides */
 .bzr-body {
@@ -283,19 +270,18 @@
 
 /* Dark bottom bar quote */
 .bzr-dark-bar {
-  margin-top: auto;
-  background: var(--c-dark);
-  color: var(--c-amber-lt);
-  font-family: var(--f-head);
-  font-size: 0.76rem;
+  background: rgba(1, 107, 120, 0.05);
+  border-left: 5px solid #D4861A;
+  color: #0D2B31;
   font-style: italic;
-  font-weight: 600;
-  padding: 12px 18px;
-  border-radius: 4px;
-  line-height: 1.55;
-  transition: background 0.2s;
+  font-weight: 500;
+  padding: 1.5rem 2rem;
+  margin: 2rem auto 44px;
+  width: 90%;
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+  font-size: 1.1rem;
 }
-.bzr-dark-bar:hover { background: #0a1f24; }
 
 /* Footnote */
 .bzr-footnote {
@@ -331,13 +317,11 @@
   gap: 0;
 }
 .bzr-hero-logo {
-  height: 54px; width: auto;
+  height: 110px; width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
-  opacity: 0.8;
-  transition: opacity 0.2s;
+  opacity: 1;
 }
-.bzr-hero-logo:hover { opacity: 1; }
 .bzr-logo-sep {
   width: 1px; height: 34px;
   background: rgba(255,255,255,0.2);
@@ -413,11 +397,6 @@
   margin-top: 18px; line-height: 1.55;
   transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
 }
-.bzr-quote:hover {
-  box-shadow: 0 6px 24px rgba(1,107,120,0.12);
-  transform: translateY(-2px);
-}
-
 .bzr-access-note {
   font-size: 0.75rem; font-style: italic;
   color: var(--c-muted);
@@ -441,10 +420,6 @@
   cursor: default;
   transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
 }
-.bzr-stat-ring:hover {
-  transform: scale(1.06);
-  box-shadow: 0 8px 32px rgba(212,134,26,0.18);
-}
 .bzr-stat-n   { font-family: var(--f-head); font-size: 2.6rem; font-weight: 800; color: var(--c-amber); line-height: 1; }
 .bzr-stat-lbl { font-family: var(--f-head); font-size: 0.92rem; font-weight: 600; color: var(--c-amber); }
 .bzr-stat-sub { font-size: 0.7rem; color: var(--c-muted); text-align: center; margin-top: 14px; }
@@ -465,7 +440,6 @@
   cursor: default;
   transition: transform 0.2s var(--ease);
 }
-.bzr-num-row:hover { transform: translateX(6px); }
 
 .bzr-num-badge {
   width: 44px; height: 44px; border-radius: 50%;
@@ -476,7 +450,6 @@
   transition: transform 0.2s var(--ease);
 }
 .bzr-badge-amber { background: var(--c-amber); }
-.bzr-num-row:hover .bzr-num-badge { transform: scale(1.1); }
 
 /* ================================================================
    SLIDE 4 — WHY THIS PROGRAM EXISTS
@@ -496,7 +469,6 @@
   letter-spacing: 0.02em; cursor: default;
   transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
-.bzr-chip:hover { transform: translateY(-3px); }
 .bzr-chip-teal  {
   background: rgba(1,107,120,0.07); border: 1px solid rgba(0,0,0,0.08);
   color: var(--c-teal);
@@ -505,8 +477,6 @@
   background: rgba(212,134,26,0.07); border: 1px solid rgba(0,0,0,0.08);
   color: #8B5500;
 }
-.bzr-chip-teal:hover  { box-shadow: none; }
-.bzr-chip-amber:hover { box-shadow: none; }
 
 /* ================================================================
    SLIDE 5 — DELIVERABLES
@@ -523,7 +493,6 @@
   cursor: default;
   transition: transform 0.2s var(--ease);
 }
-.bzr-dlv:hover { transform: translateX(4px); }
 
 .bzr-check {
   width: 26px; height: 26px; border-radius: 50%;
@@ -532,7 +501,6 @@
   flex-shrink: 0;
   transition: transform 0.22s var(--ease);
 }
-.bzr-dlv:hover .bzr-check { transform: scale(1.15); }
 .bzr-check-teal  { background: var(--c-teal); }
 .bzr-check-amber { background: var(--c-amber); }
 
@@ -551,9 +519,7 @@
   cursor: default;
   transition: transform 0.25s var(--ease);
 }
-.bzr-stat-card:hover { transform: translateY(-4px); }
 .bzr-stat-card-featured { background: var(--c-teal); border-color: var(--c-teal); }
-.bzr-stat-card-featured:hover { box-shadow: 0 10px 32px rgba(1,107,120,0.28); }
 
 .bzr-sc-big {
   font-family: var(--f-head); font-size: 3.2rem; font-weight: 800;
@@ -592,7 +558,6 @@
   cursor: default;
   transition: background 0.2s, transform 0.2s var(--ease);
 }
-.bzr-step:hover { background: var(--c-teal-lt); transform: translateX(4px); }
 
 .bzr-step-n {
   width: 36px; height: 36px; border-radius: 50%;
@@ -603,7 +568,6 @@
 }
 .bzr-step-teal  { background: var(--c-teal); }
 .bzr-step-amber { background: var(--c-amber); }
-.bzr-step:hover .bzr-step-n { transform: scale(1.1); }
 
 .bzr-step-txt { display: flex; flex-direction: column; gap: 1px; }
 .bzr-step-txt strong { font-family: var(--f-head); font-size: 0.88rem; font-weight: 700; color: var(--c-teal); }
@@ -629,13 +593,10 @@
   cursor: default;
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
-.bzr-expect-col:hover { transform: translateY(-4px); }
 .bzr-expect-teal  { background: rgba(1,107,120,0.06);  border: 1.5px solid rgba(1,107,120,0.2);  }
 .bzr-expect-amber { background: rgba(212,134,26,0.06); border: 1.5px solid rgba(212,134,26,0.2); }
 .bzr-expect-teal  h3 { font-family: var(--f-head); font-size: 0.9rem; color: var(--c-teal); margin-bottom: 10px; }
 .bzr-expect-amber h3 { font-family: var(--f-head); font-size: 0.9rem; color: #8B5500; margin-bottom: 10px; }
-.bzr-expect-teal:hover  { box-shadow: 0 8px 28px rgba(1,107,120,0.11); }
-.bzr-expect-amber:hover { box-shadow: 0 8px 28px rgba(212,134,26,0.11); }
 .bzr-expect-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
 .bzr-expect-col ul li { font-size: 0.87rem; color: var(--c-body); padding-left: 14px; position: relative; line-height: 1.65; }
 .bzr-expect-col ul li::before { content: '•'; position: absolute; left: 0; color: var(--c-muted); }
@@ -652,7 +613,6 @@
   cursor: default;
   transition: background 0.2s, padding-left 0.2s var(--ease);
 }
-.bzr-session:hover { background: var(--c-teal-lt); padding-left: 8px; }
 
 .bzr-session-tag {
   font-family: var(--f-head); font-size: 0.7rem; font-weight: 700;
@@ -660,7 +620,6 @@
   white-space: nowrap; flex-shrink: 0; letter-spacing: 0.02em;
   transition: transform 0.2s var(--ease);
 }
-.bzr-session:hover .bzr-session-tag { transform: scale(1.04); }
 .bzr-st-teal  { background: var(--c-teal); }
 .bzr-st-amber { background: var(--c-amber); }
 
@@ -683,7 +642,6 @@
   display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
   transition: border-color 0.3s, background 0.3s;
 }
-.bzr-sentence-box:hover { border-color: var(--c-amber-lt); background: rgba(2,128,144,0.42); }
 
 .bzr-sentence-lbl {
   font-family: var(--f-head); font-size: 0.82rem; font-weight: 700;
@@ -701,13 +659,12 @@
 .bzr-examples { display: flex; flex-direction: column; gap: 9px; }
 .bzr-ex-label { font-family: var(--f-head); font-size: 0.8rem; font-weight: 700; color: var(--c-amber-lt); margin: 0; text-align: left; }
 .bzr-ex-line {
-  font-size: 0.8rem; color: rgba(200,232,238,0.82); line-height: 1.65;
+  font-size: 0.8rem; color: rgba(255, 255, 255, 0.9); line-height: 1.65;
   padding-left: 14px; border-left: 2px solid rgba(240,168,48,0.28); margin: 0;
   text-align: left;
   cursor: default;
   transition: border-color 0.2s, color 0.2s;
 }
-.bzr-ex-line:hover { border-color: var(--c-amber); color: var(--c-white); }
 
 /* ================================================================
    SLIDE 11 — CLOSE
@@ -733,33 +690,25 @@
   cursor: default;
   transition: background 0.3s, border-color 0.3s, transform 0.3s var(--ease);
 }
-.bzr-final-quote:hover {
-  background: rgba(1,107,120,0.46);
-  border-color: var(--c-amber-lt);
-  transform: scale(1.01);
-}
 
 /* Contact block */
 .bzr-close-bottom {
   display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;
 }
 .bzr-contact { display: flex; flex-direction: column; gap: 3px; }
-.bzr-contact-name  { font-family: var(--f-head); font-size: 1rem; font-weight: 800; color: var(--c-amber-lt); margin: 0; }
-.bzr-contact-title { font-size: 0.77rem; color: rgba(255,255,255,0.5); font-style: italic; margin: 0 0 5px; }
-.bzr-contact-row   { font-size: 0.77rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5; }
+.bzr-contact-name  { font-family: var(--f-head); font-size: 1.3rem; font-weight: 800; color: var(--c-amber-lt); margin: 0; }
+.bzr-contact-title { font-size: 0.9rem; color: rgba(255,255,255,0.5); font-style: italic; margin: 0 0 5px; }
+.bzr-contact-row   { font-size: 0.88rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5; }
 .bzr-contact-row a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
-.bzr-contact-row a:hover { color: var(--c-amber-lt); }
-.bzr-contact-addr  { font-size: 0.72rem; color: rgba(255,255,255,0.38); margin: 2px 0 0; }
+.bzr-contact-addr  { font-size: 0.8rem; color: rgba(255,255,255,0.38); margin: 2px 0 0; }
 
 .bzr-close-logos {
   display: flex; align-items: center; flex-shrink: 0;
 }
 .bzr-cl-logo {
-  height: 34px; width: auto; object-fit: contain;
-  filter: brightness(0) invert(1); opacity: 0.6;
-  transition: opacity 0.2s;
+  height: 72px; width: auto; object-fit: contain;
+  filter: brightness(0) invert(1); opacity: 1;
 }
-.bzr-cl-logo:hover { opacity: 0.9; }
 .bzr-logo-sep-sm {
   width: 1px; height: 22px;
   background: rgba(255,255,255,0.15);
@@ -777,6 +726,49 @@
 .reveal .fragment.fade-up        { transform: translateY(18px); }
 .reveal .fragment.fade-right     { transform: translateX(-22px); }
 .reveal .fragment.fade-left      { transform: translateX(22px); }
+
+/* ================================================================
+   UNIFIED HOVER SYSTEM
+================================================================ */
+
+/* CARDS AND COLUMNS — lift */
+.bzr-stat-card:hover,
+.bzr-stat-card-featured:hover,
+.bzr-expect-col:hover {
+  transform: translateY(-3px);
+  box-shadow: none;
+}
+
+/* LIST ROWS AND STEPS — highlight */
+.bzr-num-row:hover,
+.bzr-step:hover,
+.bzr-session:hover,
+.bzr-dlv:hover {
+  background: rgba(1, 107, 120, 0.06);
+  transform: none;
+}
+
+/* CHIPS — subtle lift */
+.bzr-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+/* LINKS — color shift only */
+.bzr-contact-row a:hover {
+  color: var(--c-amber-lt);
+}
+
+/* QUOTE BLOCK — no hover effect */
+.bzr-quote:hover {
+  background: #016B78;
+  color: #FFFFFF;
+}
+.bzr-final-quote:hover,
+.bzr-sentence-box:hover,
+.bzr-ex-line:hover {
+  color: #FFFFFF;
+}
 
 /* ================================================================
    KEYFRAMES
