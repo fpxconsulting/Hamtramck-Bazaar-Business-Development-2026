@@ -9,6 +9,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
 
+/* Projector-readable scale: 25% bump on every rem-based size. */
+html { font-size: 20px; }
+
 /* ── TOKENS ──────────────────────────────────────────────── */
 :root {
   --c-dark:     #0D2B31;
@@ -100,7 +103,7 @@
 }
 
 /* All other direct canvas children sit above the doodle */
-.bzr-canvas > *:not(.bzr-doodle):not(.bzr-slide-footer) {
+.bzr-canvas > *:not(.bzr-doodle):not(.bzr-slide-footer):not(.bzr-facilitator-note) {
   position: relative;
   z-index: 1;
 }
@@ -781,3 +784,23 @@
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+/* ================================================================
+   FACILITATOR HUD NOTES
+================================================================ */
+.bzr-facilitator-note {
+  font-size: 0.85rem;
+  opacity: 0.35;
+  font-style: italic;
+  position: absolute;
+  bottom: 80px;
+  right: 40px;
+  color: inherit;
+  pointer-events: none;
+}
+.bzr-slide-dark .bzr-facilitator-note,
+.bzr-slide-teal .bzr-facilitator-note { color: #fff; }
+
+/* Scoped contrast overrides: let dark-slide-default classes work on light slides too. */
+.bzr-slide-light .bzr-prompt  { color: var(--c-muted); }
+.bzr-slide-light .bzr-ex-line { color: var(--c-body); border-left-color: rgba(212,134,26,0.55); }
