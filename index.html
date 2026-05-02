@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamtramck Bazaar Business Development Course</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <style>
+    body {
+      margin: 0;
+      background: var(--c-dark);
+      color: var(--c-white);
+      font-family: var(--f-body);
+      min-height: 100vh;
+    }
+    .bzr-index-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 40px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+    .bzr-index-main .bzr-hero-logos { gap: 0; }
+    .bzr-index-main .bzr-hero-logo { height: 88px; }
+    .bzr-index-eyebrow {
+      font-family: var(--f-head);
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(158,205,213,0.55);
+      margin: 12px 0 0;
+    }
+    .bzr-index-title {
+      font-family: var(--f-head);
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--c-amber-lt);
+      text-align: center;
+      margin: 0;
+      max-width: 900px;
+    }
+    .bzr-index-amber-rule {
+      width: 140px;
+      height: 3px;
+      background: var(--c-amber);
+      border-radius: 2px;
+      margin: 4px 0 8px;
+    }
+    .bzr-index-sub {
+      font-family: var(--f-head);
+      font-size: 1.05rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin: 0 0 24px;
+    }
+    .bzr-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      width: 100%;
+    }
+    .bzr-index-card {
+      background: rgba(2,128,144,0.14);
+      border: 1.5px solid rgba(2,128,144,0.45);
+      border-left: 4px solid var(--c-teal);
+      border-radius: 8px;
+      padding: 26px 24px 24px;
+      text-decoration: none;
+      color: var(--c-white);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .bzr-index-card:hover {
+      background: rgba(212,134,26,0.18);
+      border-color: var(--c-amber);
+      border-left-color: var(--c-amber-lt);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+    }
+    .bzr-index-card-eyebrow {
+      font-family: var(--f-head);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-amber-lt);
+    }
+    .bzr-index-card:hover .bzr-index-card-eyebrow {
+      color: var(--c-white);
+    }
+    .bzr-index-card-title {
+      font-family: var(--f-head);
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--c-white);
+    }
+    .bzr-index-card-arrow {
+      font-family: var(--f-head);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      margin-top: 12px;
+      text-transform: uppercase;
+    }
+    .bzr-index-card:hover .bzr-index-card-arrow {
+      color: var(--c-amber-lt);
+    }
+    @media (max-width: 900px) {
+      .bzr-card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .bzr-index-main { padding: 40px 20px 60px; }
+      .bzr-index-title { font-size: 2.1rem; }
+      .bzr-card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="bzr-index-main">
+
+  <div class="bzr-hero-logos">
+    <img src="assets/access-logo.png"           alt="ACCESS"           class="bzr-hero-logo">
+    <div class="bzr-logo-sep"></div>
+    <img src="assets/fpx-logo.png"              alt="Forward Project X" class="bzr-hero-logo">
+    <div class="bzr-logo-sep"></div>
+    <img src="assets/hamtramck-bazaar-logo.png" alt="Hamtramck Bazaar"  class="bzr-hero-logo">
+  </div>
+
+  <p class="bzr-index-eyebrow">Hamtramck Bazaar</p>
+  <h1 class="bzr-index-title">Business Development Course</h1>
+  <div class="bzr-index-amber-rule"></div>
+  <p class="bzr-index-sub">April 2026 Cohort</p>
+
+  <div class="bzr-card-grid">
+    <a class="bzr-index-card" href="orientation.html">
+      <span class="bzr-index-card-eyebrow">Orientation</span>
+      <span class="bzr-index-card-title">Welcome and Overview</span>
+      <span class="bzr-index-card-arrow">Open &rarr;</span>
+    </a>
+    <a class="bzr-index-card" href="session-1.html">
+      <span class="bzr-index-card-eyebrow">Session 1</span>
+      <span class="bzr-index-card-title">Business Clarity</span>
+      <span class="bzr-index-card-arrow">Open &rarr;</span>
+    </a>
+    <a class="bzr-index-card" href="session-2.html">
+      <span class="bzr-index-card-eyebrow">Session 2</span>
+      <span class="bzr-index-card-title">Pricing and Hidden Costs</span>
+      <span class="bzr-index-card-arrow">Open &rarr;</span>
+    </a>
+    <a class="bzr-index-card" href="session-3.html">
+      <span class="bzr-index-card-eyebrow">Session 3</span>
+      <span class="bzr-index-card-title">Sales and Visibility</span>
+      <span class="bzr-index-card-arrow">Open &rarr;</span>
+    </a>
+    <a class="bzr-index-card" href="session-4.html">
+      <span class="bzr-index-card-eyebrow">Session 4</span>
+      <span class="bzr-index-card-title">Operations</span>
+      <span class="bzr-index-card-arrow">Open &rarr;</span>
+    </a>
+    <a class="bzr-index-card" href="session-5.html">
+      <span class="bzr-index-card-eyebrow">Session 5</span>
+      <span class="bzr-index-card-title">Pitch and Direction</span>
+      <span class="bzr-index-card-arrow">Open &rarr;</span>
+    </a>
+  </div>
+
+</main>
+
+</body>
+</html>

@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<button onclick="Reveal.slide(0); return false;" style="position:fixed; bottom:28px; left:40px; z-index:9999; font-family:'Outfit',sans-serif; font-size:0.62rem; font-weight:600; color:#016B78; background:rgba(1,107,120,0.10); border:1.5px solid rgba(1,107,120,0.25); border-radius:20px; cursor:pointer; letter-spacing:0.07em; text-transform:uppercase; padding:3px 10px; transition:background 0.2s; opacity:0.3;">&#8592; Start</button>
+
 <div id="bzr-loader">
   <div class="bzr-loader-box">
     <div class="bzr-loader-mark">BZR <span>2026</span></div>
@@ -43,8 +45,8 @@
         <circle cx="1220" cy="616" r="3.5" fill="white" stroke="none"/>
         <circle cx="1158" cy="624" r="2"   fill="rgba(212,134,26,0.7)" stroke="none"/>
         <circle cx="1234" cy="606" r="5"   fill="rgba(212,134,26,0.5)" stroke="none"/>
-        <line x1="74"   y1="582" x2="92"   y2="582" stroke-width="1.8"/>
-        <line x1="83"   y1="573" x2="83"   y2="591" stroke-width="1.8"/>
+        <line x1="74"   y1="82"  x2="92"   y2="82"  stroke-width="1.8"/>
+        <line x1="83"   y1="73"  x2="83"   y2="91"  stroke-width="1.8"/>
         <line x1="1240" y1="74"  x2="1258" y2="74"  stroke-width="1.5"/>
         <line x1="1249" y1="65"  x2="1249" y2="83"  stroke-width="1.5"/>
         <path d="M58 668 Q80 640 102 668" stroke-width="1.4"/>
@@ -100,7 +102,7 @@
       <h2>What We Are Building Today</h2>
       <div class="bzr-rule"></div>
       <p class="bzr-lead">Today is about one thing. By the end of this session you will hold a clear, complete picture of your business in one page.</p>
-      <p class="bzr-italic fragment fade-up">This is the non-negotiable output for today. We do not leave without it.</p>
+      <p class="bzr-italic fragment fade-up">Today, we make sure everyone leaves with a working version.</p>
       <div class="bzr-dark-bar fragment fade-up">One Business Clarity Statement. Finished. In the room.</div>
     </div>
 
@@ -169,8 +171,8 @@
         <circle cx="1230" cy="606" r="3"   fill="white" stroke="none"/>
         <circle cx="1248" cy="622" r="4"   fill="white" stroke="none"/>
         <circle cx="1190" cy="630" r="2"   fill="rgba(212,134,26,0.7)" stroke="none"/>
-        <line x1="60" y1="600" x2="78" y2="600" stroke-width="1.8"/>
-        <line x1="69" y1="591" x2="69" y2="609" stroke-width="1.8"/>
+        <line x1="60" y1="80"  x2="78" y2="80"  stroke-width="1.8"/>
+        <line x1="69" y1="71"  x2="69" y2="89"  stroke-width="1.8"/>
       </g>
     </svg>
 
@@ -200,9 +202,13 @@
      WB1 · WORKBOOK PAGE 1
 ════════════════════════════════════════ -->
 <section class="bzr-slide-light" data-background-color="#F9F6F1" data-no-footer>
-  <div class="bzr-canvas bzr-col" style="justify-content:center; align-items:center; padding:24px 48px; gap:16px;">
-    <p style="color:var(--c-teal); font-size:1rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Open your workbook to this page</p>
-    <img src="assets/Session1_Workbook_v4_Page_1.png" alt="Workbook page 1" style="max-height:88%; max-width:90%; object-fit:contain; box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+  <div class="bzr-canvas bzr-row" style="align-items:stretch; padding:0; gap:0;">
+    <div style="display:flex; align-items:center; justify-content:flex-start; padding:48px 40px; min-width:260px; max-width:300px;">
+      <p style="color:var(--c-teal); font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; line-height:1.6; margin:0;">Open your<br>workbook<br>to this page</p>
+    </div>
+    <div style="flex:1; display:flex; align-items:center; justify-content:center; padding:12px 40px 12px 0;">
+      <img src="assets/Session1_Workbook_v4_Page_1.png" alt="Workbook page 1" style="max-height:96%; max-width:100%; object-fit:contain; box-shadow:0 8px 40px rgba(0,0,0,0.18);">
+    </div>
   </div>
 </section>
 
@@ -236,7 +242,7 @@
         </div>
         <div class="bzr-step fragment fade-up">
           <div class="bzr-step-n bzr-step-amber">2</div>
-          <div class="bzr-step-txt"><strong>Informal vs Retail Selling</strong><span>Informal selling is friends and family on WhatsApp. They already trust you. Retail selling is a complete stranger at your booth who owes you nothing and has five seconds to decide if they care.</span></div>
+          <div class="bzr-step-txt"><strong>Informal vs Retail Selling</strong><span>Informal selling is friends and family on WhatsApp. They already trust you. Retail selling is a person at your booth who does not know you yet and may only give you a few seconds to understand why your product matters.</span></div>
         </div>
         <div class="bzr-step fragment fade-up">
           <div class="bzr-step-n bzr-step-teal">3</div>
@@ -323,16 +329,26 @@
     <div class="bzr-body bzr-body-wide">
       <h2>Apply It in the Room</h2>
       <div class="bzr-rule"></div>
-      <p class="bzr-lead">Now we walk the Four Ps through real businesses sitting in this room.</p>
-      <ul class="bzr-tick-list">
-        <li>Pick a business in the room.</li>
-        <li class="fragment fade-up">Walk through Product, Price, Place, Promotion out loud.</li>
-        <li class="fragment fade-up">Listen for what is clear and what is missing.</li>
-      </ul>
-      <div class="bzr-quote-sm fragment fade-up">Saying it out loud is where the gaps show up.</div>
-      <div class="bzr-examples fragment fade-up">
-        <p class="bzr-ex-line">We will start with KingCraft Soaps. Product: handmade bar soap. Price: What do they charge and why? Place: Bazaar booth and Facebook. Promotion: How does anyone know they exist?</p>
+      <p class="bzr-lead">Now apply the Four Ps to your own business. Use what you just learned.</p>
+      <div class="bzr-steps">
+        <div class="bzr-step">
+          <div class="bzr-step-n bzr-step-teal">1</div>
+          <div class="bzr-step-txt"><strong>Product</strong><span>What exactly are you selling? Be specific.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">2</div>
+          <div class="bzr-step-txt"><strong>Price</strong><span>What do you charge right now and why?</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-teal">3</div>
+          <div class="bzr-step-txt"><strong>Place</strong><span>Where do customers find you and buy from you?</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">4</div>
+          <div class="bzr-step-txt"><strong>Promotion</strong><span>How do people learn that you exist?</span></div>
+        </div>
       </div>
+      <div class="bzr-quote-sm fragment fade-up">Write your answers down. The next page in your workbook has space for this.</div>
     </div>
     <p class="bzr-facilitator-note">11:05 AM | Ends 11:20</p>
 
@@ -344,9 +360,13 @@
      WB3 · WORKBOOK PAGE 3
 ════════════════════════════════════════ -->
 <section class="bzr-slide-light" data-background-color="#F9F6F1" data-no-footer>
-  <div class="bzr-canvas bzr-col" style="justify-content:center; align-items:center; padding:24px 48px; gap:16px;">
-    <p style="color:var(--c-teal); font-size:1rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Open your workbook to this page</p>
-    <img src="assets/Session1_Workbook_v4_Page_3.png" alt="Workbook page 3" style="max-height:88%; max-width:90%; object-fit:contain; box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+  <div class="bzr-canvas bzr-row" style="align-items:stretch; padding:0; gap:0;">
+    <div style="display:flex; align-items:center; justify-content:flex-start; padding:48px 40px; min-width:260px; max-width:300px;">
+      <p style="color:var(--c-teal); font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; line-height:1.6; margin:0;">Open your<br>workbook<br>to this page</p>
+    </div>
+    <div style="flex:1; display:flex; align-items:center; justify-content:center; padding:12px 40px 12px 0;">
+      <img src="assets/Session1_Workbook_v4_Page_3.png" alt="Workbook page 3" style="max-height:96%; max-width:100%; object-fit:contain; box-shadow:0 8px 40px rgba(0,0,0,0.18);">
+    </div>
   </div>
 </section>
 
@@ -451,9 +471,13 @@
      WB2 · WORKBOOK PAGE 2
 ════════════════════════════════════════ -->
 <section class="bzr-slide-light" data-background-color="#F9F6F1" data-no-footer>
-  <div class="bzr-canvas bzr-col" style="justify-content:center; align-items:center; padding:24px 48px; gap:16px;">
-    <p style="color:var(--c-teal); font-size:1rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Open your workbook to this page</p>
-    <img src="assets/Session1_Workbook_v4_Page_2.png" alt="Workbook page 2" style="max-height:88%; max-width:90%; object-fit:contain; box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+  <div class="bzr-canvas bzr-row" style="align-items:stretch; padding:0; gap:0;">
+    <div style="display:flex; align-items:center; justify-content:flex-start; padding:48px 40px; min-width:260px; max-width:300px;">
+      <p style="color:var(--c-teal); font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; line-height:1.6; margin:0;">Open your<br>workbook<br>to this page</p>
+    </div>
+    <div style="flex:1; display:flex; align-items:center; justify-content:center; padding:12px 40px 12px 0;">
+      <img src="assets/Session1_Workbook_v4_Page_2.png" alt="Workbook page 2" style="max-height:96%; max-width:100%; object-fit:contain; box-shadow:0 8px 40px rgba(0,0,0,0.18);">
+    </div>
   </div>
 </section>
 
@@ -467,8 +491,8 @@
     <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
       <g stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path d="M978 88 L984 77 L990 88 L1001 88 L993 95 L996 106 L984 99 L972 106 L975 95 L967 88Z" stroke-width="1.2"/>
-        <circle cx="80"  cy="608" r="5"   fill="white" stroke="none"/>
-        <circle cx="102" cy="592" r="3"   fill="white" stroke="none"/>
+        <circle cx="80"  cy="658" r="5"   fill="white" stroke="none"/>
+        <circle cx="102" cy="648" r="3"   fill="white" stroke="none"/>
         <line x1="1200" y1="638" x2="1218" y2="638" stroke-width="1.8"/>
         <line x1="1209" y1="629" x2="1209" y2="647" stroke-width="1.8"/>
       </g>
@@ -531,9 +555,13 @@
      WB4 · WORKBOOK PAGE 4
 ════════════════════════════════════════ -->
 <section class="bzr-slide-light" data-background-color="#F9F6F1" data-no-footer>
-  <div class="bzr-canvas bzr-col" style="justify-content:center; align-items:center; padding:24px 48px; gap:16px;">
-    <p style="color:var(--c-teal); font-size:1rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Open your workbook to this page</p>
-    <img src="assets/Session1_Workbook_v4_Page_4.png" alt="Workbook page 4" style="max-height:88%; max-width:90%; object-fit:contain; box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+  <div class="bzr-canvas bzr-row" style="align-items:stretch; padding:0; gap:0;">
+    <div style="display:flex; align-items:center; justify-content:flex-start; padding:48px 40px; min-width:260px; max-width:300px;">
+      <p style="color:var(--c-teal); font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; line-height:1.6; margin:0;">Open your<br>workbook<br>to this page</p>
+    </div>
+    <div style="flex:1; display:flex; align-items:center; justify-content:center; padding:12px 40px 12px 0;">
+      <img src="assets/Session1_Workbook_v4_Page_4.png" alt="Workbook page 4" style="max-height:96%; max-width:100%; object-fit:contain; box-shadow:0 8px 40px rgba(0,0,0,0.18);">
+    </div>
   </div>
 </section>
 
@@ -580,9 +608,13 @@
      WB6 · WORKBOOK PAGE 6
 ════════════════════════════════════════ -->
 <section class="bzr-slide-light" data-background-color="#F9F6F1" data-no-footer>
-  <div class="bzr-canvas bzr-col" style="justify-content:center; align-items:center; padding:24px 48px; gap:16px;">
-    <p style="color:var(--c-teal); font-size:1rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Open your workbook to this page</p>
-    <img src="assets/Session1_Workbook_v4_Page_6.png" alt="Workbook page 6" style="max-height:88%; max-width:90%; object-fit:contain; box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+  <div class="bzr-canvas bzr-row" style="align-items:stretch; padding:0; gap:0;">
+    <div style="display:flex; align-items:center; justify-content:flex-start; padding:48px 40px; min-width:260px; max-width:300px;">
+      <p style="color:var(--c-teal); font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; line-height:1.6; margin:0;">Open your<br>workbook<br>to this page</p>
+    </div>
+    <div style="flex:1; display:flex; align-items:center; justify-content:center; padding:12px 40px 12px 0;">
+      <img src="assets/Session1_Workbook_v4_Page_6.png" alt="Workbook page 6" style="max-height:96%; max-width:100%; object-fit:contain; box-shadow:0 8px 40px rgba(0,0,0,0.18);">
+    </div>
   </div>
 </section>
 
@@ -620,21 +652,8 @@
 <!-- ═══════════════════════════════════════
      S15 · CLOSING BRIDGE
 ════════════════════════════════════════ -->
-<section class="bzr-slide-dark" data-background-color="#0D2B31">
+<section class="bzr-slide-dark" data-background-color="#0D2B31" data-no-footer>
   <div class="bzr-canvas bzr-col" style="justify-content:flex-start; padding:48px 48px; gap:18px;">
-
-    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
-      <g stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M1148 78 L1154 67 L1160 78 L1171 78 L1163 85 L1166 96 L1154 89 L1142 96 L1145 85 L1137 78Z" stroke-width="1.2"/>
-        <path d="M78 638 L83 629 L88 638 L97 638 L91 644 L93 653 L83 647 L73 653 L75 644 L69 638Z" stroke-width="1"/>
-        <circle cx="1202" cy="618" r="5"   fill="white" stroke="none"/>
-        <circle cx="1224" cy="604" r="3"   fill="white" stroke="none"/>
-        <circle cx="1244" cy="620" r="4"   fill="white" stroke="none"/>
-        <circle cx="1184" cy="628" r="2"   fill="rgba(212,134,26,0.7)" stroke="none"/>
-        <line x1="58" y1="598" x2="76" y2="598" stroke-width="1.8"/>
-        <line x1="67" y1="589" x2="67" y2="607" stroke-width="1.8"/>
-      </g>
-    </svg>
 
     <h2 style="color:#fff; margin-bottom:0;">What Comes Next</h2>
     <div class="bzr-amber-rule"></div>
@@ -644,8 +663,27 @@
       <p class="bzr-ex-line fragment fade-up">Session 2 tests pricing and hidden costs.</p>
     </div>
 
+    <p style="color:#fff; font-size:1rem; font-weight:700; margin:16px 0 8px 0; letter-spacing:0.02em;">Next Session: Saturday, May 9 | 10:00 AM to 2:00 PM</p>
+
     <div class="bzr-final-quote fragment fade-up">Between now and next Saturday, start noticing what it actually costs you to make, package, sell, or deliver what you offer.</div>
-    <p class="bzr-facilitator-note">1:50 PM | Ends 2:00</p>
+
+    <div style="margin-top:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.15);">
+      <p style="color:#D4861A; font-size:1.1rem; font-weight:700; margin:0 0 4px 0;">Ahmad Bazzi</p>
+      <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-style:italic; margin:0 0 12px 0;">Founder and Lead Strategist, Forward Project X</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">(313) 743-3273</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">forwardprojectx.com</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">a.a.bazzi@forwardprojectx.com</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">@FPXconsulting</p>
+      <p style="color:rgba(255,255,255,0.4); font-size:0.78rem; margin:8px 0 0 0;">290 Town Center Dr, Suite 420D . Dearborn, MI 48126</p>
+    </div>
+
+    <div style="position:absolute; bottom:48px; right:48px; display:flex; align-items:center; gap:24px; opacity:0.9;">
+      <img src="assets/access-logo.png" alt="ACCESS" style="height:36px; filter:brightness(0) invert(1);">
+      <div style="width:1px; height:36px; background:rgba(255,255,255,0.25);"></div>
+      <img src="assets/fpx-logo.png" alt="Forward Project X" style="height:36px; filter:brightness(0) invert(1);">
+      <div style="width:1px; height:36px; background:rgba(255,255,255,0.25);"></div>
+      <img src="assets/hamtramck-bazaar-logo.png" alt="Hamtramck Bazaar" style="height:36px; filter:brightness(0) invert(1);">
+    </div>
 
   </div>
 </section>
