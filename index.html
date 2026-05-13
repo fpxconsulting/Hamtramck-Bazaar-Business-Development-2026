@@ -86,6 +86,29 @@
       transform: translateY(-3px);
       box-shadow: 0 10px 28px rgba(0,0,0,0.35);
     }
+    .bzr-index-card-disabled {
+      opacity: 0.6;
+      cursor: default;
+      background: rgba(2,128,144,0.07);
+      border-color: rgba(2,128,144,0.25);
+      border-left-color: rgba(2,128,144,0.45);
+    }
+    .bzr-index-card-disabled:hover {
+      background: rgba(2,128,144,0.07);
+      border-color: rgba(2,128,144,0.25);
+      border-left-color: rgba(2,128,144,0.45);
+      transform: none;
+      box-shadow: none;
+    }
+    .bzr-index-card-disabled .bzr-index-card-arrow {
+      color: rgba(255,255,255,0.35);
+      font-style: italic;
+      text-transform: uppercase;
+    }
+    .bzr-index-card-disabled:hover .bzr-index-card-eyebrow,
+    .bzr-index-card-disabled:hover .bzr-index-card-arrow {
+      color: inherit;
+    }
     .bzr-index-card-eyebrow {
       font-family: var(--f-head);
       font-size: 0.78rem;
@@ -104,6 +127,14 @@
       line-height: 1.2;
       color: var(--c-white);
     }
+    .bzr-index-card-date {
+      font-family: var(--f-body);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.45);
+      margin-top: -2px;
+    }
     .bzr-index-card-arrow {
       font-family: var(--f-head);
       font-size: 0.82rem;
@@ -116,6 +147,33 @@
     .bzr-index-card:hover .bzr-index-card-arrow {
       color: var(--c-amber-lt);
     }
+    .bzr-index-footer {
+      background: #0A2026;
+      padding: 28px 40px 32px;
+      text-align: center;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .bzr-index-disclaimer {
+      font-family: var(--f-body);
+      font-size: 0.78rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.55);
+      max-width: 820px;
+      margin: 0 auto 10px;
+    }
+    .bzr-index-contact {
+      font-family: var(--f-body);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.45);
+      margin: 0;
+    }
+    .bzr-index-contact a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    .bzr-index-contact a:hover { color: var(--c-amber-lt); }
     @media (max-width: 900px) {
       .bzr-card-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -123,6 +181,19 @@
       .bzr-index-main { padding: 40px 20px 60px; }
       .bzr-index-title { font-size: 2.1rem; }
       .bzr-card-grid { grid-template-columns: 1fr; }
+      .bzr-index-footer { padding: 22px 20px 26px; }
+      .bzr-index-disclaimer { font-size: 0.74rem; }
+    }
+    @media (max-width: 480px) {
+      .bzr-index-main .bzr-hero-logo {
+        max-height: 32px;
+        height: auto;
+        width: auto;
+      }
+      .bzr-index-main .bzr-logo-sep {
+        height: 16px;
+        margin: 0 6px;
+      }
     }
   </style>
 </head>
@@ -147,36 +218,51 @@
     <a class="bzr-index-card" href="orientation.html">
       <span class="bzr-index-card-eyebrow">Orientation</span>
       <span class="bzr-index-card-title">Welcome and Overview</span>
+      <span class="bzr-index-card-date">April 25, 2026</span>
       <span class="bzr-index-card-arrow">Open &rarr;</span>
     </a>
     <a class="bzr-index-card" href="session-1.html">
       <span class="bzr-index-card-eyebrow">Session 1</span>
       <span class="bzr-index-card-title">Business Clarity</span>
+      <span class="bzr-index-card-date">May 2, 2026</span>
       <span class="bzr-index-card-arrow">Open &rarr;</span>
     </a>
     <a class="bzr-index-card" href="session-2.html">
       <span class="bzr-index-card-eyebrow">Session 2</span>
       <span class="bzr-index-card-title">Pricing and Hidden Costs</span>
+      <span class="bzr-index-card-date">May 9, 2026</span>
       <span class="bzr-index-card-arrow">Open &rarr;</span>
     </a>
-    <a class="bzr-index-card" href="session-3.html">
+    <div class="bzr-index-card bzr-index-card-disabled">
       <span class="bzr-index-card-eyebrow">Session 3</span>
       <span class="bzr-index-card-title">Sales and Visibility</span>
-      <span class="bzr-index-card-arrow">Open &rarr;</span>
-    </a>
-    <a class="bzr-index-card" href="session-4.html">
+      <span class="bzr-index-card-date">May 16, 2026</span>
+      <span class="bzr-index-card-arrow">Coming Soon</span>
+    </div>
+    <div class="bzr-index-card bzr-index-card-disabled">
       <span class="bzr-index-card-eyebrow">Session 4</span>
       <span class="bzr-index-card-title">Operations</span>
-      <span class="bzr-index-card-arrow">Open &rarr;</span>
-    </a>
-    <a class="bzr-index-card" href="session-5.html">
+      <span class="bzr-index-card-date">May 23, 2026</span>
+      <span class="bzr-index-card-arrow">Coming Soon</span>
+    </div>
+    <div class="bzr-index-card bzr-index-card-disabled">
       <span class="bzr-index-card-eyebrow">Session 5</span>
       <span class="bzr-index-card-title">Pitch and Direction</span>
-      <span class="bzr-index-card-arrow">Open &rarr;</span>
-    </a>
+      <span class="bzr-index-card-date">May 30, 2026</span>
+      <span class="bzr-index-card-arrow">Coming Soon</span>
+    </div>
   </div>
 
 </main>
+
+<footer class="bzr-index-footer">
+  <p class="bzr-index-disclaimer">
+    This program was developed by FPX Consulting in partnership with ACCESS and the Hamtramck Bazaar. All curriculum content is proprietary and intended for enrolled participants of the April 2026 cohort.
+  </p>
+  <p class="bzr-index-contact">
+    Questions? Reach us at <a href="mailto:a.a.bazzi@forwardprojectx.com">a.a.bazzi@forwardprojectx.com</a>
+  </p>
+</footer>
 
 </body>
 </html>
