@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bazaar Retail Accelerator: Session 3 Sales and Visibility</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+<button onclick="Reveal.slide(0); return false;" style="position:fixed; bottom:28px; left:40px; z-index:9999; font-family:'Outfit',sans-serif; font-size:0.62rem; font-weight:600; color:#016B78; background:rgba(1,107,120,0.10); border:1.5px solid rgba(1,107,120,0.25); border-radius:20px; cursor:pointer; letter-spacing:0.07em; text-transform:uppercase; padding:3px 10px; transition:background 0.2s; opacity:0.3;">&#8592; Start</button>
+
+<div id="bzr-loader">
+  <div class="bzr-loader-box">
+    <div class="bzr-loader-mark">BZR <span>2026</span></div>
+    <div class="bzr-loader-track"><div class="bzr-loader-bar"></div></div>
+    <div class="bzr-loader-sub">Retail Accelerator . Session 3</div>
+  </div>
+</div>
+
+<div id="bzr-counter">
+  <span id="bzr-cur">01</span>
+  <span class="bzr-dash">-</span>
+  <span id="bzr-tot">17</span>
+</div>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- ═══════════════════════════════════════
+     S1 . TITLE
+════════════════════════════════════════ -->
+<section class="bzr-slide-dark" data-background-color="#0D2B31" data-no-footer>
+  <div class="bzr-canvas bzr-col" style="justify-content:space-between; padding:36px 48px;">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M944 138 L948 127 L952 138 L963 138 L955 145 L958 156 L948 149 L938 156 L941 145 L933 138Z" stroke-width="1.2"/>
+        <path d="M1132 222 L1135 215 L1138 222 L1145 222 L1140 226 L1142 233 L1135 229 L1128 233 L1130 226 L1125 222Z" stroke-width="1"/>
+        <path d="M1080 366 L1083 359 L1086 366 L1093 366 L1088 370 L1090 377 L1083 373 L1076 377 L1078 370 L1073 366Z" stroke-width="1"/>
+        <circle cx="1170" cy="606" r="4.5" fill="white" stroke="none"/>
+        <circle cx="1196" cy="594" r="2.5" fill="white" stroke="none"/>
+        <circle cx="1218" cy="612" r="3.5" fill="white" stroke="none"/>
+        <circle cx="1150" cy="620" r="2"   fill="rgba(212,134,26,0.7)" stroke="none"/>
+        <circle cx="1232" cy="600" r="5"   fill="rgba(212,134,26,0.5)" stroke="none"/>
+        <line x1="92"  y1="98"  x2="110" y2="98"  stroke-width="1.8"/>
+        <line x1="101" y1="89"  x2="101" y2="107" stroke-width="1.8"/>
+        <line x1="1224" y1="92" x2="1242" y2="92" stroke-width="1.5"/>
+        <line x1="1233" y1="83" x2="1233" y2="101" stroke-width="1.5"/>
+        <path d="M62 670 Q86 640 110 670" stroke-width="1.4"/>
+        <path d="M1170 466 Q1198 440 1226 466" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-hero-logos">
+      <img src="assets/access-logo.png"           alt="ACCESS"           class="bzr-hero-logo">
+      <div class="bzr-logo-sep"></div>
+      <img src="assets/fpx-logo.png"              alt="Forward Project X" class="bzr-hero-logo">
+      <div class="bzr-logo-sep"></div>
+      <img src="assets/hamtramck-bazaar-logo.png" alt="Hamtramck Bazaar"  class="bzr-hero-logo">
+    </div>
+
+    <div>
+      <p class="bzr-eyebrow">Hamtramck Bazaar</p>
+      <h1 class="bzr-title-hero">Sales and<br>Visibility</h1>
+      <div class="bzr-amber-rule"></div>
+      <p class="bzr-title-session">Session 3</p>
+      <p class="bzr-title-date">Saturday, May 16, 2026 . 10:00 AM to 2:00 PM</p>
+    </div>
+
+    <p class="bzr-tagline">If they cannot find you, they cannot buy from you.</p>
+    <p class="bzr-facilitator-note">10:00 AM | Opening ends 10:15</p>
+
+  </div>
+  <div class="bzr-blob"></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S2 . WHAT WE ARE BUILDING TODAY
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="1180" cy="630" r="6"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="1206" cy="614" r="3.5" fill="#016B78"/>
+        <circle cx="1230" cy="636" r="8"   stroke="#016B78" stroke-width="1.2"/>
+        <circle cx="1162" cy="648" r="2.5" fill="#D4861A"/>
+        <circle cx="1224" cy="656" r="3"   fill="#016B78"/>
+        <path d="M62 654 L72 642 L82 654Z" stroke="#D4861A" stroke-width="1.5"/>
+        <path d="M1186 56 L1193 45 L1200 56 L1211 56 L1203 63 L1206 74 L1193 67 L1180 74 L1183 63 L1175 56Z" stroke="#016B78" stroke-width="1.2"/>
+        <line x1="1198" y1="120" x2="1216" y2="120" stroke="#016B78" stroke-width="1.8"/>
+        <line x1="1207" y1="111" x2="1207" y2="129" stroke="#016B78" stroke-width="1.8"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body">
+      <h2>What We Are Building Today</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Today we make your business easier to find, trust, and buy from.</p>
+      <p class="bzr-italic fragment fade-up">Every participant leaves with a completed Visibility Checklist and at least one friction point fixed in the room.</p>
+      <div class="bzr-dark-bar fragment fade-up">That is the non-negotiable output for today.</div>
+    </div>
+
+    <div class="bzr-stat-panel">
+      <div class="bzr-stat-ring">
+        <span class="bzr-stat-n">1</span>
+        <span class="bzr-stat-lbl">checklist</span>
+      </div>
+      <p class="bzr-stat-sub">Visibility Checklist</p>
+    </div>
+
+    <p class="bzr-facilitator-note">10:00 AM | Opening ends 10:15</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S3 . THE THREE QUESTIONS
+════════════════════════════════════════ -->
+<section class="bzr-slide-dark" data-background-color="#0D2B31">
+  <div class="bzr-canvas bzr-col" style="justify-content:flex-start; padding:48px 48px; gap:14px;">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1162 80 L1168 69 L1174 80 L1185 80 L1177 87 L1180 98 L1168 91 L1156 98 L1159 87 L1151 80Z" stroke-width="1.2"/>
+        <path d="M88 644 L93 635 L98 644 L107 644 L101 650 L103 659 L93 653 L83 659 L85 650 L79 644Z" stroke-width="1"/>
+        <circle cx="1212" cy="624" r="5"   fill="white" stroke="none"/>
+        <circle cx="1234" cy="610" r="3"   fill="white" stroke="none"/>
+        <circle cx="1252" cy="626" r="4"   fill="white" stroke="none"/>
+        <circle cx="1194" cy="636" r="2"   fill="rgba(212,134,26,0.7)" stroke="none"/>
+        <circle cx="1262" cy="612" r="2.5" fill="rgba(212,134,26,0.6)" stroke="none"/>
+        <line x1="64" y1="86"  x2="82" y2="86"  stroke-width="1.8"/>
+        <line x1="73" y1="77"  x2="73" y2="95"  stroke-width="1.8"/>
+      </g>
+    </svg>
+
+    <h2 style="color:#fff; margin-bottom:0;">Every Customer Asks Three Questions</h2>
+    <div class="bzr-amber-rule"></div>
+    <p class="bzr-lead" style="color:#fff;">Before anyone buys from a business they do not know yet, they need three answers.</p>
+
+    <div class="bzr-examples">
+      <p class="bzr-ex-line">1. Can I find you?</p>
+      <p class="bzr-ex-line fragment fade-up">2. Can I trust you?</p>
+      <p class="bzr-ex-line fragment fade-up">3. Do I know what to do next?</p>
+    </div>
+
+    <div class="bzr-final-quote fragment fade-up">If they cannot find you, they cannot buy from you.</div>
+
+    <p class="bzr-facilitator-note">10:00 AM | Ends 10:15</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S4 . OPENING PHONE HOOK
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1192,612 1201,601 1216,624" stroke="#016B78" stroke-width="2.5"/>
+        <polyline points="1228,594 1237,583 1252,606" stroke="#D4861A" stroke-width="2"/>
+        <circle cx="68"  cy="634" r="5"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="88"  cy="620" r="3"   fill="#016B78"/>
+        <circle cx="106" cy="637" r="6"   stroke="#D4861A" stroke-width="1.2"/>
+        <line x1="1206" y1="60" x2="1224" y2="60" stroke="#016B78" stroke-width="1.8"/>
+        <line x1="1215" y1="51" x2="1215" y2="69" stroke="#016B78" stroke-width="1.8"/>
+        <path d="M1196 128 Q1218 106 1240 128" stroke="#D4861A" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>Pull Out Your Phone Right Now</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Search for your own business. Google it. Find your Instagram or Facebook. Write down exactly what a stranger sees. Not what you think they see. What they actually see.</p>
+      <div class="bzr-steps">
+        <div class="bzr-step">
+          <div class="bzr-step-n bzr-step-teal">1</div>
+          <div class="bzr-step-txt"><strong>What comes up?</strong><span>Your name? Your page? A review? A competitor? Write it down exactly.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">2</div>
+          <div class="bzr-step-txt"><strong>What is missing?</strong><span>No photos? No price? No bio? No contact? No hours? Every gap is a customer you may have already lost.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-teal">3</div>
+          <div class="bzr-step-txt"><strong>If nothing comes up at all</strong><span>That is not a problem. That is your starting point. Today we begin fixing that.</span></div>
+        </div>
+      </div>
+      <div class="bzr-quote-sm fragment fade-up">Three questions. Can they find you, trust you, and know what to do next?</div>
+    </div>
+    <p class="bzr-facilitator-note">10:15 AM | Ends 10:30</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S5 . TRUST VS FRICTION
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1170 580 Q1192 558 1214 580 Q1236 602 1258 580" stroke="#016B78" stroke-width="1.5"/>
+        <path d="M1170 596 Q1192 574 1214 596 Q1236 618 1258 596" stroke="#016B78" stroke-width="1"/>
+        <circle cx="64"  cy="650" r="3"   fill="#D4861A"/>
+        <circle cx="82"  cy="636" r="2"   fill="#016B78"/>
+        <circle cx="98"  cy="652" r="4.5" stroke="#016B78" stroke-width="1.5"/>
+        <path d="M1216 64 L1223 53 L1230 64 L1241 64 L1234 71 L1236 82 L1223 75 L1210 82 L1212 71 L1205 64Z" stroke="#D4861A" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>Trust vs Friction</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Trust makes customers feel safe enough to buy. Friction makes them hesitate, leave, or ask too many questions.</p>
+      <div class="bzr-steps">
+        <div class="bzr-step">
+          <div class="bzr-step-n bzr-step-teal">1</div>
+          <div class="bzr-step-txt"><strong>Instagram Bio</strong><span>Friction: Handmade items. DM for info.</span><span>Trust: Handmade soy candles for gifts and home comfort. Pickup in Hamtramck. Order by DM.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">2</div>
+          <div class="bzr-step-txt"><strong>Product Photo</strong><span>Friction: Dark photo. No label. No size. No price.</span><span>Trust: Clear photo. Product name. Size. Price. How to order.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-teal">3</div>
+          <div class="bzr-step-txt"><strong>Business Name</strong><span>Friction: Different names across Instagram, Google, and booth sign.</span><span>Trust: Same business name everywhere.</span></div>
+        </div>
+      </div>
+      <div class="bzr-quote-sm fragment fade-up">Every unclear detail creates a small reason not to buy.</div>
+    </div>
+    <p class="bzr-facilitator-note">10:15 AM | Ends 10:30</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S6 . THE WORST BIO MOMENT
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1162 596 L1170 584 L1178 596 L1190 596 L1181 604 L1184 616 L1170 609 L1156 616 L1159 604 L1150 596Z" stroke="#016B78" stroke-width="1.2"/>
+        <circle cx="60"  cy="650" r="3"   fill="#D4861A"/>
+        <circle cx="78"  cy="636" r="2.5" fill="#016B78"/>
+        <circle cx="96"  cy="652" r="4.5" stroke="#D4861A" stroke-width="1.5"/>
+        <line x1="1220" y1="62" x2="1238" y2="62" stroke="#016B78" stroke-width="1.8"/>
+        <line x1="1229" y1="53" x2="1229" y2="71" stroke="#016B78" stroke-width="1.8"/>
+        <path d="M1196 130 Q1220 108 1244 130" stroke="#D4861A" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>The Worst Bio Moment</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">DM for info is not a business strategy.</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:16px;">
+
+        <div style="background:rgba(212,134,26,0.06); border:1.5px solid rgba(212,134,26,0.2); border-radius:8px; padding:14px 16px;">
+          <p style="font-family:'Outfit',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8B5500; margin:0 0 8px;">Bad Bio 1</p>
+          <p style="font-style:italic; font-size:0.84rem; color:var(--c-body); line-height:1.45; margin:0 0 10px;">&ldquo;Welcome to my page. Handmade with love. DM me.&rdquo;</p>
+          <p style="font-size:0.76rem; color:var(--c-muted); line-height:1.55; margin:0;">What do they sell?</p>
+          <p style="font-size:0.76rem; color:var(--c-muted); line-height:1.55; margin:0;">Who is it for?</p>
+          <p style="font-size:0.76rem; color:var(--c-muted); line-height:1.55; margin:0;">How do I buy?</p>
+        </div>
+
+        <div class="fragment fade-up" style="background:rgba(212,134,26,0.06); border:1.5px solid rgba(212,134,26,0.2); border-radius:8px; padding:14px 16px;">
+          <p style="font-family:'Outfit',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8B5500; margin:0 0 8px;">Bad Bio 2</p>
+          <p style="font-style:italic; font-size:0.84rem; color:var(--c-body); line-height:1.45; margin:0 0 10px;">&ldquo;Luxury items for everyone. Best quality. Message me.&rdquo;</p>
+          <p style="font-size:0.76rem; color:var(--c-muted); line-height:1.55; margin:0;">What is the product?</p>
+          <p style="font-size:0.76rem; color:var(--c-muted); line-height:1.55; margin:0;">What makes it luxury?</p>
+          <p style="font-size:0.76rem; color:var(--c-muted); line-height:1.55; margin:0;">What should I do next?</p>
+        </div>
+
+        <div class="fragment fade-up" style="background:rgba(212,134,26,0.06); border:1.5px solid rgba(212,134,26,0.2); border-radius:8px; padding:14px 16px;">
+          <p style="font-family:'Outfit',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8B5500; margin:0 0 8px;">Bad Bio 3</p>
+          <p style="font-style:italic; font-size:0.84rem; color:var(--c-body); line-height:1.45; margin:0 0 10px;">&ldquo;Cakes, decor, gifts, events, customs, more.&rdquo;</p>
+          <p style="font-size:0.76rem; color:var(--c-muted); line-height:1.55; margin:0;">What is the main offer?</p>
+          <p style="font-size:0.76rem; color:var(--c-muted); line-height:1.55; margin:0;">What would I ask first?</p>
+          <p style="font-size:0.76rem; color:var(--c-muted); line-height:1.55; margin:0;">What feels confusing?</p>
+        </div>
+
+      </div>
+
+      <div class="fragment fade-up" style="background:rgba(1,107,120,0.06); border:1.5px solid rgba(1,107,120,0.2); border-radius:8px; padding:14px 18px; margin-top:14px;">
+        <p style="font-family:'Outfit',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#016B78; margin:0 0 6px;">Improved Bio</p>
+        <p style="font-style:italic; font-size:0.88rem; color:var(--c-body); line-height:1.5; margin:0;">&ldquo;Custom dessert trays and small event sweets for family gatherings, birthdays, and Eid. Pickup in Hamtramck. DM to order.&rdquo;</p>
+      </div>
+
+      <div class="bzr-quote-sm fragment fade-up">A clear bio does not need to be fancy. It needs to answer the customer's next question.</div>
+    </div>
+    <p class="bzr-facilitator-note">10:30 AM | Ends 10:45 | Ask the room each question out loud before revealing the answer.</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S7 . FIVE-SECOND PITCH CHALLENGE
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1158 596 L1166 584 L1174 596" stroke="#016B78" stroke-width="2"/>
+        <path d="M1196 608 L1204 596 L1212 608" stroke="#D4861A" stroke-width="2"/>
+        <circle cx="74"  cy="650" r="5"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="96"  cy="636" r="3"   fill="#D4861A"/>
+        <line x1="1228" y1="56" x2="1246" y2="56" stroke="#016B78" stroke-width="1.8"/>
+        <line x1="1237" y1="47" x2="1237" y2="65" stroke="#016B78" stroke-width="1.8"/>
+        <circle cx="1248" cy="612" r="3.5" fill="#D4861A"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>Five-Second Pitch Challenge</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-prompt">Open your workbook to Part 1.</p>
+      <p class="bzr-lead">Before we practice, here is what a weak pitch sounds like versus a strong one.</p>
+      <div class="bzr-examples">
+        <p class="bzr-ex-line"><strong>Weak.</strong> I sell skincare. <strong>Stronger.</strong> I sell handmade body butters for women who want soft skin without harsh chemicals.</p>
+        <p class="bzr-ex-line fragment fade-up"><strong>Weak.</strong> I do decorations. <strong>Stronger.</strong> I create balloon and table setups for birthdays, baby showers, and small family events.</p>
+        <p class="bzr-ex-line fragment fade-up"><strong>Weak.</strong> I sell food. <strong>Stronger.</strong> I sell homemade sambusa and party trays for families who want fresh food for gatherings without cooking everything themselves.</p>
+      </div>
+      <div class="bzr-steps">
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-teal">1</div>
+          <div class="bzr-step-txt"><strong>Write your pitch</strong><span>When someone asks what I do, I say... Keep it to one or two sentences. Be specific about who it is for.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">2</div>
+          <div class="bzr-step-txt"><strong>Speed round</strong><span>Thirty seconds per person. Timer on screen. Then move to the next partner. Three rounds total.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-teal">3</div>
+          <div class="bzr-step-txt"><strong>Your partner answers three questions</strong><span>What do they sell? Who is it for? What is the reason to buy?</span></div>
+        </div>
+      </div>
+      <div class="bzr-quote-sm fragment fade-up">Let them laugh through the awkwardness. The awkwardness is the lesson.</div>
+    </div>
+    <p class="bzr-facilitator-note">10:45 AM | Ends 11:15 | Keep the energy up. Move fast between rounds.</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S8 . TRUST AUDIT AND FRICTION HUNT
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1148 588 L1156 576 L1164 588 L1176 588 L1167 596 L1170 608 L1156 601 L1142 608 L1145 596 L1136 588Z" stroke="#016B78" stroke-width="1.2"/>
+        <circle cx="74"  cy="653" r="4"   fill="#D4861A"/>
+        <circle cx="92"  cy="639" r="2.5" fill="#016B78"/>
+        <circle cx="110" cy="655" r="3.5" stroke="#016B78" stroke-width="1.5"/>
+        <line x1="1214" y1="56" x2="1232" y2="56" stroke="#D4861A" stroke-width="1.8"/>
+        <line x1="1223" y1="47" x2="1223" y2="65" stroke="#D4861A" stroke-width="1.8"/>
+        <path d="M1198 124 Q1220 102 1242 124" stroke="#016B78" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>Trust Audit and Friction Hunt</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-prompt">Open your workbook to Part 2.</p>
+      <p class="bzr-lead">Look at your business through a stranger's eyes.</p>
+      <ul class="bzr-list">
+        <li>Name three things that already build trust in your business.</li>
+        <li class="fragment fade-up">Name three friction points that need to be fixed.</li>
+        <li class="fragment fade-up">Choose one friction point you can fix today.</li>
+        <li class="fragment fade-up">Write it down. That is your working session target.</li>
+      </ul>
+      <div class="bzr-dark-bar fragment fade-up">The one friction point you choose today is your non-negotiable output from this block.</div>
+    </div>
+    <p class="bzr-facilitator-note">11:15 AM | Ends 11:40</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S9 . BREAK
+════════════════════════════════════════ -->
+<section class="bzr-slide-dark" data-background-color="#0D2B31">
+  <div class="bzr-canvas bzr-col" style="justify-content:center; align-items:flex-start; padding:0 96px;">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1156 92 L1162 81 L1168 92 L1179 92 L1171 99 L1174 110 L1162 103 L1150 110 L1153 99 L1145 92Z" stroke-width="1.2"/>
+        <path d="M86 642 L91 633 L96 642 L105 642 L99 648 L101 657 L91 651 L81 657 L83 648 L77 642Z" stroke-width="1"/>
+        <circle cx="1218" cy="622" r="5"   fill="white" stroke="none"/>
+        <circle cx="1240" cy="608" r="3"   fill="white" stroke="none"/>
+        <line x1="1190" y1="640" x2="1208" y2="640" stroke-width="1.8"/>
+        <line x1="1199" y1="631" x2="1199" y2="649" stroke-width="1.8"/>
+      </g>
+    </svg>
+
+    <h2 style="color:#fff; margin-bottom:0;">Break</h2>
+    <div class="bzr-amber-rule"></div>
+    <p class="bzr-prompt">Ten minutes. Come back with your phone and your workbook.</p>
+    <p class="bzr-facilitator-note">11:40 AM | Ends 11:50</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S10 . DIGITAL REALITY CHECK
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1178 616 L1186 604 L1200 624" stroke="#016B78" stroke-width="2.2"/>
+        <path d="M1218 604 L1226 592 L1240 612" stroke="#D4861A" stroke-width="2"/>
+        <circle cx="60"  cy="644" r="4"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="80"  cy="630" r="2.5" fill="#016B78"/>
+        <circle cx="100" cy="646" r="5.5" stroke="#D4861A" stroke-width="1.2"/>
+        <path d="M1208 50 Q1230 30 1252 50" stroke="#016B78" stroke-width="1.5"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>Digital Reality Check</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Before we go further, search for your business one more time. Write down what you see now versus what you noted at the start.</p>
+      <ul class="bzr-list">
+        <li>Search your business name on Google.</li>
+        <li class="fragment fade-up">Find your main social page.</li>
+        <li class="fragment fade-up">Answer honestly: can a stranger find you, trust you, and know what to do next?</li>
+        <li class="fragment fade-up">Write down the one thing that still needs the most work.</li>
+      </ul>
+      <div class="bzr-quote-sm fragment fade-up">What you see right now is what your next customer sees. That is the number that matters.</div>
+    </div>
+    <p class="bzr-facilitator-note">11:50 AM | Ends 12:00</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S11 . THE CUSTOMER PATH
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1196,610 1205,599 1220,622" stroke="#016B78" stroke-width="2.5"/>
+        <polyline points="1232,592 1241,581 1256,604" stroke="#D4861A" stroke-width="2"/>
+        <circle cx="64"  cy="638" r="5"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="84"  cy="624" r="3"   fill="#016B78"/>
+        <circle cx="102" cy="641" r="6"   stroke="#D4861A" stroke-width="1.2"/>
+        <path d="M1200 60 Q1222 38 1244 60" stroke="#016B78" stroke-width="1.5"/>
+        <path d="M68 658 Q90 632 112 658" stroke="#D4861A" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide" style="font-size:0.94em;">
+      <h2>The Customer Path</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Every customer follows the same path from noticing you to deciding to buy. Here is where that path breaks.</p>
+      <div class="bzr-examples">
+        <p class="bzr-ex-line">A customer sees you at the Bazaar.</p>
+        <p class="bzr-ex-line fragment fade-up">Then they search your name later.</p>
+        <p class="bzr-ex-line fragment fade-up">Then they check your photos and reviews.</p>
+        <p class="bzr-ex-line fragment fade-up">Then they look for how to order.</p>
+        <p class="bzr-ex-line fragment fade-up">Then they decide whether to message you.</p>
+      </div>
+      <p class="bzr-lead fragment fade-up">Here is where that path breaks.</p>
+      <div class="bzr-examples">
+        <p class="bzr-ex-line fragment fade-up">They remember the product but not the name.</p>
+        <p class="bzr-ex-line fragment fade-up">They find the page but the bio is unclear.</p>
+        <p class="bzr-ex-line fragment fade-up">They like the photos but cannot find the price.</p>
+        <p class="bzr-ex-line fragment fade-up">They want to order but cannot find the contact info.</p>
+        <p class="bzr-ex-line fragment fade-up">They search Google and nothing comes up.</p>
+      </div>
+      <div class="bzr-quote-sm fragment fade-up">Do not make people play hide and seek with your business.</div>
+    </div>
+    <p class="bzr-facilitator-note">12:00 PM | Ends 12:10</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S12 . THE FINDABILITY ENGINE
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1184 598 Q1206 576 1228 598 Q1250 620 1272 598" stroke="#016B78" stroke-width="1.5"/>
+        <path d="M1184 614 Q1206 592 1228 614 Q1250 636 1272 614" stroke="#016B78" stroke-width="1"/>
+        <circle cx="62"  cy="648" r="5"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="82"  cy="634" r="3"   fill="#D4861A"/>
+        <circle cx="100" cy="652" r="6"   stroke="#016B78" stroke-width="1.2"/>
+        <path d="M1216 64 L1223 53 L1230 64 L1241 64 L1234 71 L1236 82 L1223 75 L1210 82 L1212 71 L1205 64Z" stroke="#D4861A" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>The Findability Engine</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Once you understand how the path breaks, here is how you fix it.</p>
+      <div class="bzr-steps">
+        <div class="bzr-step">
+          <div class="bzr-step-n bzr-step-teal">1</div>
+          <div class="bzr-step-txt"><strong>The non-negotiables</strong><span>Same business name everywhere. Clear bio. Clear photos. Easy contact. Easy buying steps. A plan to collect reviews.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">2</div>
+          <div class="bzr-step-txt"><strong>Google Business Profile</strong><span>If you are eligible and ready, this is the single most powerful free visibility tool available. It puts you on Google Maps and in local search results.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-teal">3</div>
+          <div class="bzr-step-txt"><strong>The filter</strong><span>After every improvement ask the three questions. Can they find you, trust you, and know what to do next?</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="bzr-facilitator-note">12:10 PM | Ends 12:20</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S13 . GOOGLE BUSINESS PROFILE WALKTHROUGH
+════════════════════════════════════════ -->
+<section class="bzr-slide-dark" data-background-color="#0D2B31">
+  <div class="bzr-canvas bzr-col" style="justify-content:flex-start; padding:48px 48px; gap:14px;">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1146 76 L1152 65 L1158 76 L1169 76 L1161 83 L1164 94 L1152 87 L1140 94 L1143 83 L1135 76Z" stroke-width="1.2"/>
+        <path d="M76 632 L81 623 L86 632 L95 632 L89 638 L91 647 L81 641 L71 647 L73 638 L67 632Z" stroke-width="1"/>
+        <circle cx="1196" cy="612" r="5"   fill="white" stroke="none"/>
+        <circle cx="1218" cy="598" r="3"   fill="white" stroke="none"/>
+        <circle cx="1236" cy="614" r="4"   fill="white" stroke="none"/>
+        <circle cx="1178" cy="624" r="2"   fill="rgba(212,134,26,0.7)" stroke="none"/>
+        <circle cx="1252" cy="602" r="2.5" fill="rgba(212,134,26,0.5)" stroke="none"/>
+        <line x1="64" y1="92"  x2="82" y2="92"  stroke-width="1.8"/>
+        <line x1="73" y1="83"  x2="73" y2="101" stroke-width="1.8"/>
+      </g>
+    </svg>
+
+    <h2 style="color:#fff; margin-bottom:0;">Google Business Profile</h2>
+    <div class="bzr-amber-rule"></div>
+    <p class="bzr-prompt">We are showing the doorway, not walking through the whole house. Follow along on your phone.</p>
+
+    <div class="bzr-examples">
+      <p class="bzr-ex-line"><strong>Step 1.</strong> Search Google Business Profile and click Manage now. This is where your free listing lives.</p>
+      <p class="bzr-ex-line fragment fade-up"><strong>Step 2.</strong> Enter your exact business name. This helps customers recognize and search for you.</p>
+      <p class="bzr-ex-line fragment fade-up"><strong>Step 3.</strong> Select your business category. This tells Google what kind of business you are so the right people find you.</p>
+      <p class="bzr-ex-line fragment fade-up"><strong>Step 4.</strong> Add your address or service area. This tells customers where you serve or where they can find you.</p>
+      <p class="bzr-ex-line fragment fade-up"><strong>Step 5.</strong> Add your phone number and website or social link. This gives customers an easy way to reach you.</p>
+      <p class="bzr-ex-line fragment fade-up"><strong>Step 6.</strong> Add photos and write a two-sentence description. Photos build trust before anyone talks to you. Your description explains what you offer in simple language.</p>
+    </div>
+
+    <div class="bzr-quote-sm fragment fade-up">If you hit a verification step, write it down and we will handle it one on one during the working session.</div>
+
+    <p class="bzr-facilitator-note">12:20 PM | Ends 12:35 | Do not troubleshoot individual issues here. Note them and move on.</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S14 . WORKING SESSION . VISIBILITY TOOLKIT
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1198,612 1207,601 1222,624" stroke="#016B78" stroke-width="2.5"/>
+        <polyline points="1234,594 1243,583 1258,606" stroke="#D4861A" stroke-width="2"/>
+        <circle cx="74"  cy="640" r="5"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="94"  cy="626" r="3"   fill="#016B78"/>
+        <circle cx="112" cy="643" r="6"   stroke="#D4861A" stroke-width="1.2"/>
+        <path d="M1208 60 Q1230 38 1252 60" stroke="#016B78" stroke-width="1.5"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>Build Your Visibility Toolkit</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-prompt">Open your workbook to Parts 2 and 3.</p>
+      <p class="bzr-lead">Work through the toolkit in this order. Start with the planner, then complete the checklist, then fix one thing before you stop.</p>
+      <ul class="bzr-list">
+        <li>Part 2: Complete your Google Business Profile Planner.</li>
+        <li class="fragment fade-up">Part 2: Draft your review request message.</li>
+        <li class="fragment fade-up">Part 3: Complete your Visibility Checklist.</li>
+        <li class="fragment fade-up">Fix one friction point now.</li>
+        <li class="fragment fade-up">Before you stop, check the three questions: Can they find you? Can they trust you? Do they know what to do next?</li>
+      </ul>
+      <div class="bzr-dark-bar fragment fade-up">We are not here to solve every platform issue today. We are here to make one real visibility improvement before you leave.</div>
+    </div>
+    <p class="bzr-facilitator-note">12:35 PM | Ends 1:20 | Walk the room. Ask each participant: which of the three questions does your page still not answer?</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S15 . PEER REVIEW . THE STRANGER TEST
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="1200" cy="608" r="6"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="1222" cy="592" r="3.5" fill="#D4861A"/>
+        <circle cx="1244" cy="612" r="5"   stroke="#016B78" stroke-width="1.2"/>
+        <circle cx="68"  cy="652" r="4"   fill="#D4861A"/>
+        <circle cx="88"  cy="640" r="2.5" fill="#016B78"/>
+        <line x1="1216" y1="62" x2="1234" y2="62" stroke="#016B78" stroke-width="1.8"/>
+        <line x1="1225" y1="53" x2="1225" y2="71" stroke="#016B78" stroke-width="1.8"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide" style="font-size:0.94em;">
+      <h2>The Stranger Test</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Before you review your partner's page, remember this.</p>
+      <div class="bzr-examples">
+        <p class="bzr-ex-line">A stranger does not know your story.</p>
+        <p class="bzr-ex-line fragment fade-up">A stranger does not know your quality.</p>
+        <p class="bzr-ex-line fragment fade-up">A stranger does not know what you meant.</p>
+        <p class="bzr-ex-line fragment fade-up">They only know what your page, sign, photos, and words make clear.</p>
+        <p class="bzr-ex-line fragment fade-up">Your cousin understands what you sell. A stranger does not owe you that much effort.</p>
+      </div>
+      <p class="bzr-prompt">Open your workbook to Part 3.</p>
+      <ul class="bzr-list">
+        <li>What do they sell?</li>
+        <li class="fragment fade-up">Who is it for?</li>
+        <li class="fragment fade-up">How do I buy?</li>
+        <li class="fragment fade-up">Do I trust this enough to ask a question?</li>
+        <li class="fragment fade-up">What is the one thing that needs to be clearer?</li>
+      </ul>
+      <div class="bzr-quote-sm fragment fade-up">Raise your hand if your partner's page answered all three questions. Hands that do not go up are the honest to-do list.</div>
+    </div>
+    <p class="bzr-facilitator-note">1:20 PM | Ends 1:45</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S16 . FIX ONE THING NOW
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1170 614 L1178 602 L1192 622" stroke="#016B78" stroke-width="2.2"/>
+        <path d="M1210 602 L1218 590 L1232 610" stroke="#D4861A" stroke-width="2"/>
+        <circle cx="60"  cy="642" r="4"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="80"  cy="628" r="2.5" fill="#016B78"/>
+        <circle cx="100" cy="644" r="5.5" stroke="#D4861A" stroke-width="1.2"/>
+        <path d="M1202 50 Q1224 30 1246 50" stroke="#016B78" stroke-width="1.5"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>Fix One Thing Now</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Take what your partner said. Pick the one friction point that will make the biggest difference and fix it before we close.</p>
+      <p class="bzr-italic fragment fade-up">This is today's commitment: one real fix before you leave.</p>
+      <div class="bzr-examples">
+        <p class="bzr-ex-line">Update your Instagram bio.</p>
+        <p class="bzr-ex-line fragment fade-up">Add clear ordering instructions.</p>
+        <p class="bzr-ex-line fragment fade-up">Choose a stronger profile photo.</p>
+        <p class="bzr-ex-line fragment fade-up">Write your Google Business description.</p>
+        <p class="bzr-ex-line fragment fade-up">Draft your review request message.</p>
+        <p class="bzr-ex-line fragment fade-up">Add contact information.</p>
+        <p class="bzr-ex-line fragment fade-up">Clarify your main product highlight.</p>
+      </div>
+      <div class="bzr-dark-bar fragment fade-up">In the room today, I fixed...</div>
+    </div>
+    <p class="bzr-facilitator-note">1:45 PM | Ends 1:55</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S17 . CLOSING BRIDGE
+════════════════════════════════════════ -->
+<section class="bzr-slide-dark" data-background-color="#0D2B31" data-no-footer>
+  <div class="bzr-canvas bzr-col" style="justify-content:flex-start; padding:48px 48px; gap:18px;">
+
+    <h2 style="color:#fff; margin-bottom:0;">What Comes Next</h2>
+    <div class="bzr-amber-rule"></div>
+
+    <div class="bzr-examples">
+      <p class="bzr-ex-line">Session 3 creates visibility and trust.</p>
+      <p class="bzr-ex-line fragment fade-up">Session 4 moves into operations and consistency.</p>
+    </div>
+
+    <p style="color:#fff; font-size:1rem; font-weight:700; margin:16px 0 8px 0; letter-spacing:0.02em;">Next Session: Saturday, May 23 | 10:00 AM to 2:00 PM</p>
+
+    <div class="bzr-final-quote fragment fade-up">They can find you now. Make sure they can trust you and buy from you too.</div>
+
+    <div style="margin-top:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.15);">
+      <p style="color:#D4861A; font-size:1.1rem; font-weight:700; margin:0 0 4px 0;">Ahmad Bazzi</p>
+      <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-style:italic; margin:0 0 12px 0;">Founder and Lead Strategist, Forward Project X</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">(313) 743-3273</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">forwardprojectx.com</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">a.a.bazzi@forwardprojectx.com</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">@FPXconsulting</p>
+      <p style="color:rgba(255,255,255,0.4); font-size:0.78rem; margin:8px 0 0 0;">290 Town Center Dr, Suite 420D . Dearborn, MI 48126</p>
+    </div>
+
+    <div style="position:absolute; bottom:48px; right:48px; display:flex; align-items:center; gap:24px; opacity:0.9;">
+      <img src="assets/access-logo.png" alt="ACCESS" style="height:36px; filter:brightness(0) invert(1);">
+      <div style="width:1px; height:36px; background:rgba(255,255,255,0.25);"></div>
+      <img src="assets/fpx-logo.png" alt="Forward Project X" style="height:36px; filter:brightness(0) invert(1);">
+      <div style="width:1px; height:36px; background:rgba(255,255,255,0.25);"></div>
+      <img src="assets/hamtramck-bazaar-logo.png" alt="Hamtramck Bazaar" style="height:36px; filter:brightness(0) invert(1);">
+    </div>
+
+  </div>
+</section>
+
+
+</div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+
+/* LOADER */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const l = document.getElementById('bzr-loader');
+    l.style.opacity = '0';
+    l.style.pointerEvents = 'none';
+    setTimeout(() => l.style.display = 'none', 400);
+  }, 300);
+});
+
+/* REVEAL */
+Reveal.initialize({
+  controls: false, controlsTutorial: false,
+  progress: true, slideNumber: false,
+  hash: true, keyboard: true,
+  mouseWheel: false,
+  transition: 'slide', transitionSpeed: 'default',
+  backgroundTransition: 'fade',
+  center: false, margin: 0,
+  width: 1280, height: 720,
+  minScale: 0.2, maxScale: 2.0,
+  fragments: true, fragmentInURL: false,
+});
+
+let wheelCooldown = false;
+window.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  if (wheelCooldown) return;
+  wheelCooldown = true;
+  setTimeout(() => { wheelCooldown = false; }, 300);
+  if (e.deltaY > 0) {
+    Reveal.next();
+  } else {
+    Reveal.prev();
+  }
+}, { passive: false });
+
+/* LOGO FOOTER INJECTION */
+Reveal.on('ready', () => {
+  const slides = document.querySelectorAll('.reveal .slides section');
+  document.getElementById('bzr-tot').textContent = String(slides.length).padStart(2, '0');
+
+  slides.forEach(slide => {
+    if (slide.hasAttribute('data-no-footer')) return;
+    const f = document.createElement('div');
+    f.className = 'bzr-slide-footer';
+    f.innerHTML = `
+      <img src="assets/access-logo.png"           alt="ACCESS"           class="bzr-footer-logo">
+      <div class="bzr-footer-sep"></div>
+      <img src="assets/fpx-logo.png"              alt="Forward Project X" class="bzr-footer-logo">
+      <div class="bzr-footer-sep"></div>
+      <img src="assets/hamtramck-bazaar-logo.png" alt="Hamtramck Bazaar"  class="bzr-footer-logo">
+    `;
+    const canvas = slide.querySelector('.bzr-canvas');
+    if (canvas) {
+      canvas.appendChild(f);
+    } else {
+      slide.appendChild(f);
+    }
+  });
+
+  updateCounter();
+});
+
+/* COUNTER */
+function updateCounter() {
+  document.getElementById('bzr-cur').textContent =
+    String(Reveal.getState().indexh + 1).padStart(2, '0');
+}
+Reveal.on('slidechanged', updateCounter);
+
+</script>
+</body>
+</html>
