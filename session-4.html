@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bazaar Retail Accelerator: Session 4 Operations and Consistency</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+<button onclick="Reveal.slide(0); return false;" style="position:fixed; bottom:28px; left:40px; z-index:9999; font-family:'Outfit',sans-serif; font-size:0.62rem; font-weight:600; color:#016B78; background:rgba(1,107,120,0.10); border:1.5px solid rgba(1,107,120,0.25); border-radius:20px; cursor:pointer; letter-spacing:0.07em; text-transform:uppercase; padding:3px 10px; transition:background 0.2s; opacity:0.3;">&#8592; Start</button>
+
+<div id="bzr-loader">
+  <div class="bzr-loader-box">
+    <div class="bzr-loader-mark">BZR <span>2026</span></div>
+    <div class="bzr-loader-track"><div class="bzr-loader-bar"></div></div>
+    <div class="bzr-loader-sub">Retail Accelerator . Session 4</div>
+  </div>
+</div>
+
+<div id="bzr-counter">
+  <span id="bzr-cur">01</span>
+  <span class="bzr-dash">-</span>
+  <span id="bzr-tot">14</span>
+</div>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- ═══════════════════════════════════════
+     S1 . TITLE
+════════════════════════════════════════ -->
+<section class="bzr-slide-dark" data-background-color="#0D2B31" data-no-footer>
+  <div class="bzr-canvas bzr-col" style="justify-content:space-between; padding:36px 48px;">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M932 116 L936 105 L940 116 L951 116 L943 123 L946 134 L936 127 L926 134 L929 123 L921 116Z" stroke-width="1.2"/>
+        <path d="M1122 210 L1125 203 L1128 210 L1135 210 L1130 214 L1132 221 L1125 217 L1118 221 L1120 214 L1115 210Z" stroke-width="1"/>
+        <path d="M1062 358 L1065 351 L1068 358 L1075 358 L1070 362 L1072 369 L1065 365 L1058 369 L1060 362 L1055 358Z" stroke-width="1"/>
+        <circle cx="1184" cy="608" r="4.5" fill="white" stroke="none"/>
+        <circle cx="1208" cy="596" r="2.5" fill="white" stroke="none"/>
+        <circle cx="1228" cy="614" r="3.5" fill="white" stroke="none"/>
+        <circle cx="1164" cy="622" r="2"   fill="rgba(212,134,26,0.7)" stroke="none"/>
+        <circle cx="1242" cy="604" r="5"   fill="rgba(212,134,26,0.5)" stroke="none"/>
+        <line x1="64"   y1="78"  x2="82"   y2="78"  stroke-width="1.8"/>
+        <line x1="73"   y1="69"  x2="73"   y2="87"  stroke-width="1.8"/>
+        <line x1="1232" y1="80"  x2="1250" y2="80"  stroke-width="1.5"/>
+        <line x1="1241" y1="71"  x2="1241" y2="89"  stroke-width="1.5"/>
+        <path d="M52 664 Q76 636 100 664" stroke-width="1.4"/>
+        <path d="M1176 460 Q1204 434 1232 460" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-hero-logos">
+      <img src="assets/access-logo.png"           alt="ACCESS"           class="bzr-hero-logo">
+      <div class="bzr-logo-sep"></div>
+      <img src="assets/fpx-logo.png"              alt="Forward Project X" class="bzr-hero-logo">
+      <div class="bzr-logo-sep"></div>
+      <img src="assets/hamtramck-bazaar-logo.png" alt="Hamtramck Bazaar"  class="bzr-hero-logo">
+    </div>
+
+    <div>
+      <p class="bzr-eyebrow">Hamtramck Bazaar</p>
+      <h1 class="bzr-title-hero">Operations and<br>Consistency</h1>
+      <div class="bzr-amber-rule"></div>
+      <p class="bzr-title-session">Session 4</p>
+      <p class="bzr-title-date">Saturday, May 30, 2026 . 10:00 AM to 2:00 PM</p>
+    </div>
+
+    <p class="bzr-tagline">If everything lives in your head, the business cannot run without you.</p>
+    <p class="bzr-facilitator-note">10:00 AM | Opening ends 10:15</p>
+
+  </div>
+  <div class="bzr-blob"></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S2 . WHAT WE ARE BUILDING TODAY
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="1176" cy="636" r="6"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="1202" cy="620" r="3.5" fill="#016B78"/>
+        <circle cx="1226" cy="640" r="8"   stroke="#016B78" stroke-width="1.2"/>
+        <circle cx="1158" cy="650" r="2.5" fill="#D4861A"/>
+        <circle cx="1220" cy="658" r="3"   fill="#016B78"/>
+        <path d="M58 660 L66 648 L74 660Z" stroke="#D4861A" stroke-width="1.5"/>
+        <path d="M1182 54 L1189 43 L1196 54 L1207 54 L1199 61 L1202 72 L1189 65 L1176 72 L1179 61 L1171 54Z" stroke="#016B78" stroke-width="1.2"/>
+        <line x1="1194" y1="118" x2="1212" y2="118" stroke="#016B78" stroke-width="1.8"/>
+        <line x1="1203" y1="109" x2="1203" y2="127" stroke="#016B78" stroke-width="1.8"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body">
+      <h2>What We Are Building Today</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Today we get the business out of your head and onto paper.</p>
+      <p class="bzr-italic fragment fade-up">Every participant leaves with a completed Operations Checklist and a first working draft of their Session 5 pitch.</p>
+      <div class="bzr-dark-bar fragment fade-up">That is the non-negotiable output for today.</div>
+    </div>
+
+    <div class="bzr-stat-panel">
+      <div class="bzr-stat-ring">
+        <span class="bzr-stat-n">1</span>
+        <span class="bzr-stat-lbl">checklist</span>
+      </div>
+      <p class="bzr-stat-sub">Operations Checklist</p>
+    </div>
+
+    <p class="bzr-facilitator-note">10:00 AM | Opening ends 10:15</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S3 . THREE OPERATING QUESTIONS
+════════════════════════════════════════ -->
+<section class="bzr-slide-dark" data-background-color="#0D2B31">
+  <div class="bzr-canvas bzr-col" style="justify-content:flex-start; padding:48px 48px; gap:14px;">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1152 74 L1158 63 L1164 74 L1175 74 L1167 81 L1170 92 L1158 85 L1146 92 L1149 81 L1141 74Z" stroke-width="1.2"/>
+        <path d="M78 638 L83 629 L88 638 L97 638 L91 644 L93 653 L83 647 L73 653 L75 644 L69 638Z" stroke-width="1"/>
+        <circle cx="1204" cy="618" r="5"   fill="white" stroke="none"/>
+        <circle cx="1226" cy="604" r="3"   fill="white" stroke="none"/>
+        <circle cx="1244" cy="620" r="4"   fill="white" stroke="none"/>
+        <circle cx="1186" cy="630" r="2"   fill="rgba(212,134,26,0.7)" stroke="none"/>
+        <circle cx="1256" cy="606" r="2.5" fill="rgba(212,134,26,0.6)" stroke="none"/>
+        <line x1="58" y1="82"  x2="76" y2="82"  stroke-width="1.8"/>
+        <line x1="67" y1="73"  x2="67" y2="91"  stroke-width="1.8"/>
+      </g>
+    </svg>
+
+    <h2 style="color:#fff; margin-bottom:0;">Every Business Needs Three Answers</h2>
+    <div class="bzr-amber-rule"></div>
+    <p class="bzr-lead" style="color:#fff;">These three questions are the spine of everything we do today.</p>
+
+    <div class="bzr-examples">
+      <p class="bzr-ex-line">1. Do I know what I have? Inventory, supplies, tools, ingredients, materials.</p>
+      <p class="bzr-ex-line fragment fade-up">2. Do I know what I can handle? Capacity, time, order limits, delivery ability.</p>
+      <p class="bzr-ex-line fragment fade-up">3. Do I know what needs to happen next? Tasks, priorities, weekly rhythm, follow-up.</p>
+    </div>
+
+    <div class="bzr-final-quote fragment fade-up">If everything lives in your head, the business cannot run without you.</div>
+
+    <p class="bzr-facilitator-note">10:00 AM | Ends 10:15</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S4 . A CUSTOMER SAYS YES. NOW WHAT?
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1188,616 1197,605 1212,628" stroke="#016B78" stroke-width="2.5"/>
+        <polyline points="1224,598 1233,587 1248,610" stroke="#D4861A" stroke-width="2"/>
+        <circle cx="66"  cy="636" r="5"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="86"  cy="622" r="3"   fill="#016B78"/>
+        <circle cx="104" cy="639" r="6"   stroke="#D4861A" stroke-width="1.2"/>
+        <line x1="1202" y1="58" x2="1220" y2="58" stroke="#016B78" stroke-width="1.8"/>
+        <line x1="1211" y1="49" x2="1211" y2="67" stroke="#016B78" stroke-width="1.8"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body">
+      <h2>A Customer Says Yes. Now What?</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Think through every step that happens after a customer says yes. We will walk through it together as a room.</p>
+      <div class="bzr-steps">
+        <div class="bzr-step">
+          <div class="bzr-step-n bzr-step-teal">1</div>
+          <div class="bzr-step-txt"><strong>Take the order</strong><span>Confirm the details. Get the payment. Make sure you understand exactly what they want and when they need it.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">2</div>
+          <div class="bzr-step-txt"><strong>Make and prepare</strong><span>Check your inventory. Make the product or schedule the service. Package it. Make sure it is ready on time.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-teal">3</div>
+          <div class="bzr-step-txt"><strong>Deliver and follow up</strong><span>Get it to the customer. Confirm they received it. Ask if they are happy. Ask for a review.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">4</div>
+          <div class="bzr-step-txt"><strong>Restock and reset</strong><span>Replace what you used. Update your inventory. Get ready for the next order.</span></div>
+        </div>
+      </div>
+      <div class="bzr-quote-sm fragment fade-up">Every step in this list is part of your operations. If any step is unclear, that is where the business is at risk.</div>
+    </div>
+
+    <div style="width:340px; flex-shrink:0; display:flex; align-items:center; padding:24px 40px 24px 0;">
+      <img src="assets/s4-photo.avif" alt="Small business vendor at a market" style="width:100%; height:440px; object-fit:cover; border-radius:14px; display:block; box-shadow:0 8px 32px rgba(0,0,0,0.14);">
+    </div>
+
+    <p class="bzr-facilitator-note">10:15 AM | Ends 10:35</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S5 . WHAT OPERATIONS REALLY MEANS
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1166 584 Q1188 562 1210 584 Q1232 606 1254 584" stroke="#016B78" stroke-width="1.5"/>
+        <path d="M1166 600 Q1188 578 1210 600 Q1232 622 1254 600" stroke="#016B78" stroke-width="1"/>
+        <circle cx="60"  cy="648" r="3"   fill="#D4861A"/>
+        <circle cx="78"  cy="634" r="2"   fill="#016B78"/>
+        <circle cx="94"  cy="650" r="4.5" stroke="#016B78" stroke-width="1.5"/>
+        <path d="M1210 56 L1217 45 L1224 56 L1235 56 L1228 63 L1230 74 L1217 67 L1204 74 L1206 63 L1199 56Z" stroke="#D4861A" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>What Operations Really Means</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Operations is the answer to one simple question: can this business deliver consistently, not just on a good day?</p>
+      <div class="bzr-steps">
+        <div class="bzr-step">
+          <div class="bzr-step-n bzr-step-teal">1</div>
+          <div class="bzr-step-txt"><strong>Operations is what the customer feels</strong><span>They may never see your process. But they feel whether it is smooth or messy. A late order, a missed message, or a payment confusion all damage trust even when the product is excellent.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">2</div>
+          <div class="bzr-step-txt"><strong>Operations is what turns a sale into a repeatable experience</strong><span>Anyone can have a good day. Operations is what makes the good day happen again and again without relying on perfect conditions or perfect memory.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-teal">3</div>
+          <div class="bzr-step-txt"><strong>Operations is what gets the business out of your head</strong><span>If you are the only one who knows how everything works, the business cannot grow and it cannot survive a hard week.</span></div>
+        </div>
+      </div>
+      <div class="bzr-quote-sm fragment fade-up">Session 4 is not about making the business complicated. It is about making it real.</div>
+    </div>
+    <p class="bzr-facilitator-note">10:15 AM | Ends 10:35</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S6 . THE BROKEN HANDOFF
+════════════════════════════════════════ -->
+<section class="bzr-slide-dark" data-background-color="#0D2B31">
+  <div class="bzr-canvas bzr-col" style="justify-content:flex-start; padding:48px 48px; gap:14px;">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1144 68 L1150 57 L1156 68 L1167 68 L1159 75 L1162 86 L1150 79 L1138 86 L1141 75 L1133 68Z" stroke-width="1.2"/>
+        <path d="M70 632 L75 623 L80 632 L89 632 L83 638 L85 647 L75 641 L65 647 L67 638 L61 632Z" stroke-width="1"/>
+        <circle cx="1196" cy="610" r="5"   fill="white" stroke="none"/>
+        <circle cx="1218" cy="596" r="3"   fill="white" stroke="none"/>
+        <circle cx="1236" cy="612" r="4"   fill="white" stroke="none"/>
+        <circle cx="1178" cy="622" r="2"   fill="rgba(212,134,26,0.7)" stroke="none"/>
+        <line x1="62" y1="84"  x2="80" y2="84"  stroke-width="1.8"/>
+        <line x1="71" y1="75"  x2="71" y2="93"  stroke-width="1.8"/>
+        <path d="M1180 462 Q1208 436 1236 462" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <h2 style="color:#fff; margin-bottom:0;">The Broken Handoff</h2>
+    <div class="bzr-amber-rule"></div>
+    <p class="bzr-lead" style="color:#fff;">A real example of what happens when operations are missing.</p>
+
+    <div class="bzr-examples">
+      <p class="bzr-ex-line">A customer orders a dessert tray for a family gathering.</p>
+      <p class="bzr-ex-line fragment fade-up">The business forgets to confirm the pickup time.</p>
+      <p class="bzr-ex-line fragment fade-up">The box is not ready when the customer arrives.</p>
+      <p class="bzr-ex-line fragment fade-up">Payment was never collected upfront.</p>
+      <p class="bzr-ex-line fragment fade-up">The customer messages twice and waits hours for a reply.</p>
+      <p class="bzr-ex-line fragment fade-up">The product is good. But the experience feels messy.</p>
+    </div>
+
+    <div class="bzr-final-quote fragment fade-up">Good products can lose trust when the process feels unclear. This is where Session 3 and Session 4 connect.</div>
+
+    <p class="bzr-facilitator-note">10:35 AM | Ends 10:50</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S7 . THE BUSINESS IN YOUR HEAD
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1146 592 L1154 580 L1162 592 L1174 592 L1165 600 L1168 612 L1154 605 L1140 612 L1143 600 L1134 592Z" stroke="#016B78" stroke-width="1.2"/>
+        <circle cx="70"  cy="652" r="4"   fill="#D4861A"/>
+        <circle cx="88"  cy="638" r="2.5" fill="#016B78"/>
+        <circle cx="106" cy="654" r="3.5" stroke="#016B78" stroke-width="1.5"/>
+        <line x1="1210" y1="58" x2="1228" y2="58" stroke="#D4861A" stroke-width="1.8"/>
+        <line x1="1219" y1="49" x2="1219" y2="67" stroke="#D4861A" stroke-width="1.8"/>
+        <path d="M1196 126 Q1218 104 1240 126" stroke="#016B78" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>The Business in Your Head</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-prompt">Open your workbook to Part 1.</p>
+      <p class="bzr-lead">List everything that currently lives only in your memory that the business depends on.</p>
+      <div class="bzr-steps">
+        <div class="bzr-step">
+          <div class="bzr-step-n bzr-step-teal">1</div>
+          <div class="bzr-step-txt"><strong>Write it all down</strong><span>Do not filter. Do not organize yet. Just list everything that lives in your head that the business depends on.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">2</div>
+          <div class="bzr-step-txt"><strong>Mark the three categories</strong><span>What must be written down. What must be tracked regularly. What must happen the same way every time.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-teal">3</div>
+          <div class="bzr-step-txt"><strong>Choose the most important one</strong><span>Which single item, if it were written down today, would most protect your business?</span></div>
+        </div>
+      </div>
+      <div class="bzr-quote-sm fragment fade-up">The goal is not perfection. The goal is getting it out of your head.</div>
+    </div>
+    <p class="bzr-facilitator-note">10:50 AM | Ends 11:20</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S8 . INVENTORY AND SUPPLY AWARENESS
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1170 576 Q1192 554 1214 576 Q1236 598 1258 576" stroke="#016B78" stroke-width="1.5"/>
+        <path d="M1170 592 Q1192 570 1214 592 Q1236 614 1258 592" stroke="#016B78" stroke-width="1"/>
+        <circle cx="62"  cy="650" r="3"   fill="#D4861A"/>
+        <circle cx="80"  cy="636" r="2"   fill="#016B78"/>
+        <circle cx="96"  cy="652" r="4.5" stroke="#016B78" stroke-width="1.5"/>
+        <path d="M1212 58 L1219 47 L1226 58 L1237 58 L1230 65 L1232 76 L1219 69 L1206 76 L1208 65 L1201 58Z" stroke="#D4861A" stroke-width="1.2"/>
+        <polyline points="74,98 83,87 98,110" stroke="#016B78" stroke-width="2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body">
+      <h2>Inventory and Supply Awareness</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">You do not need software. You need to know what you have, what you need, and when you are running low.</p>
+      <div class="bzr-steps">
+        <div class="bzr-step">
+          <div class="bzr-step-n bzr-step-teal">1</div>
+          <div class="bzr-step-txt"><strong>Product businesses</strong><span>Ingredients, materials, packaging, labels, bags, finished products ready to sell, unsold items from last session. If you do not know how many you have right now, that is a gap in your operations.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">2</div>
+          <div class="bzr-step-txt"><strong>Service businesses</strong><span>Available time slots, tools and software, templates and files, active client projects, follow-ups waiting, proposals not yet sent. Your inventory is your time and your capacity.</span></div>
+        </div>
+      </div>
+      <div class="bzr-dark-bar fragment fade-up">Both types of businesses have inventory. The difference is whether it sits on a shelf or in a calendar.</div>
+    </div>
+
+    <div style="width:340px; flex-shrink:0; display:flex; align-items:center; padding:24px 40px 24px 0;">
+      <img src="assets/s8-photo.avif" alt="Organized supplies and ingredients for a small business" style="width:100%; height:440px; object-fit:cover; border-radius:14px; display:block; box-shadow:0 8px 32px rgba(0,0,0,0.14);">
+    </div>
+
+    <p class="bzr-facilitator-note">11:20 AM | Ends 11:35</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S9 . BREAK
+════════════════════════════════════════ -->
+<section class="bzr-slide-dark" data-background-color="#0D2B31">
+  <div class="bzr-canvas bzr-col" style="justify-content:center; align-items:flex-start; padding:0 96px;">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1150 88 L1156 77 L1162 88 L1173 88 L1165 95 L1168 106 L1156 99 L1144 106 L1147 95 L1139 88Z" stroke-width="1.2"/>
+        <path d="M82 634 L87 625 L92 634 L101 634 L95 640 L97 649 L87 643 L77 649 L79 640 L73 634Z" stroke-width="1"/>
+        <circle cx="1214" cy="618" r="5"   fill="white" stroke="none"/>
+        <circle cx="1236" cy="604" r="3"   fill="white" stroke="none"/>
+        <line x1="1186" y1="638" x2="1204" y2="638" stroke-width="1.8"/>
+        <line x1="1195" y1="629" x2="1195" y2="647" stroke-width="1.8"/>
+      </g>
+    </svg>
+
+    <h2 style="color:#fff; margin-bottom:0;">Break</h2>
+    <div class="bzr-amber-rule"></div>
+    <p class="bzr-prompt">Ten minutes. Come back ready to work on your checklist.</p>
+    <p class="bzr-facilitator-note">11:35 AM | Ends 11:45</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S10 . TIME AND CAPACITY
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1186,614 1195,603 1210,626" stroke="#016B78" stroke-width="2.5"/>
+        <polyline points="1222,596 1231,585 1246,608" stroke="#D4861A" stroke-width="2"/>
+        <circle cx="62"  cy="640" r="5"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="82"  cy="626" r="3"   fill="#016B78"/>
+        <circle cx="100" cy="643" r="6"   stroke="#D4861A" stroke-width="1.2"/>
+        <line x1="1204" y1="60" x2="1222" y2="60" stroke="#016B78" stroke-width="1.8"/>
+        <line x1="1213" y1="51" x2="1213" y2="69" stroke="#016B78" stroke-width="1.8"/>
+        <path d="M1192 132 Q1214 110 1236 132" stroke="#D4861A" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>Time and Capacity</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Capacity is what you can realistically handle without breaking quality. Knowing your limit protects the business.</p>
+      <div class="bzr-steps">
+        <div class="bzr-step">
+          <div class="bzr-step-n bzr-step-teal">1</div>
+          <div class="bzr-step-txt"><strong>How long does one order take?</strong><span>For products: from first ingredient to packaged and ready. For services: from first message to delivery. Include the time you forget to count.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">2</div>
+          <div class="bzr-step-txt"><strong>How many can you complete in a week?</strong><span>Product businesses: trays, candles, soaps, outfits per week. Service businesses: clients, projects, sessions, or custom orders per week.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-teal">3</div>
+          <div class="bzr-step-txt"><strong>What slows you down?</strong><span>Missing supplies. Late payments. Unclear orders. Too many revisions. These are your friction points.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">4</div>
+          <div class="bzr-step-txt"><strong>What is your limit right now?</strong><span>At what point do you start missing quality or deadlines? That number is your capacity ceiling. You will capture this number in your workbook on the next slide.</span></div>
+        </div>
+      </div>
+      <div class="bzr-quote-sm fragment fade-up">This connects directly to your pricing. If capacity is ten orders a week and each takes two hours, the business has a ceiling. Knowing the ceiling protects you from overcommitting and underdelivering.</div>
+    </div>
+    <p class="bzr-facilitator-note">11:45 AM | Ends 12:15</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S11 . BUILD YOUR OPERATIONS CHECKLIST
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row" style="padding-bottom:80px;">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1196,612 1205,601 1220,624" stroke="#016B78" stroke-width="2.5"/>
+        <polyline points="1232,594 1241,583 1256,606" stroke="#D4861A" stroke-width="2"/>
+        <circle cx="68"  cy="644" r="5"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="88"  cy="630" r="3"   fill="#016B78"/>
+        <circle cx="106" cy="647" r="6"   stroke="#D4861A" stroke-width="1.2"/>
+        <path d="M1204 62 Q1226 40 1248 62" stroke="#016B78" stroke-width="1.5"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>Build Your Operations Checklist</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-prompt">Open your workbook to Part 2.</p>
+      <p class="bzr-lead">This is the required deliverable for Session 4. Work through each section. Protect this time.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0 40px;">
+        <ul class="bzr-list">
+          <li>Order process: how do you take and confirm an order or booking?</li>
+          <li class="fragment fade-up">What you have: supplies, ingredients, inventory, or available time.</li>
+          <li class="fragment fade-up">What you need to restock, schedule, or prepare next.</li>
+          <li class="fragment fade-up">Packaging or preparation: how do you get it ready to deliver?</li>
+          <li class="fragment fade-up">Payment: how do you confirm payment was received?</li>
+        </ul>
+        <ul class="bzr-list">
+          <li class="fragment fade-up">Follow-up: what do you do after delivery or completion?</li>
+          <li class="fragment fade-up">Review request: how do you ask for a review?</li>
+          <li class="fragment fade-up">Weekly rhythm: what must happen every week without fail?</li>
+          <li class="fragment fade-up">Capacity: how many orders or clients can you handle this week?</li>
+        </ul>
+      </div>
+      <div class="bzr-dark-bar fragment fade-up">Finish every section. This checklist is the system that protects your business when memory fails.</div>
+    </div>
+    <p class="bzr-facilitator-note">12:15 PM | Ends 1:05</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S12 . FROM OPERATIONS TO PITCH
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1174 614 L1182 602 L1196 624" stroke="#016B78" stroke-width="2.2"/>
+        <path d="M1214 602 L1222 590 L1236 612" stroke="#D4861A" stroke-width="2"/>
+        <circle cx="62"  cy="642" r="4"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="82"  cy="628" r="2.5" fill="#016B78"/>
+        <circle cx="102" cy="644" r="5.5" stroke="#D4861A" stroke-width="1.2"/>
+        <path d="M1206 50 Q1228 30 1250 50" stroke="#016B78" stroke-width="1.5"/>
+        <line x1="1218" y1="118" x2="1236" y2="118" stroke="#D4861A" stroke-width="1.8"/>
+        <line x1="1227" y1="109" x2="1227" y2="127" stroke="#D4861A" stroke-width="1.8"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body">
+      <h2>From Operations to Pitch</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-lead">Next week is Session 5. Naji will be in the room. Every participant presents their business. This is not a performance. It is a summary of what you already built.</p>
+      <div class="bzr-steps">
+        <div class="bzr-step">
+          <div class="bzr-step-n bzr-step-teal">1</div>
+          <div class="bzr-step-txt"><strong>You already have everything you need</strong><span>Session 1 gave you clarity on what you sell. Session 2 gave you real pricing. Session 3 gave you visibility. Session 4 gives you your operations system.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">2</div>
+          <div class="bzr-step-txt"><strong>The pitch is not a new assignment</strong><span>It is what happens when all four come together in one explanation. You are not starting something new. You are putting into words what you already know.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-teal">3</div>
+          <div class="bzr-step-txt"><strong>Keep it short</strong><span>Sixty to ninety seconds when spoken out loud. Clear, confident, specific. One sentence per question.</span></div>
+        </div>
+        <div class="bzr-step fragment fade-up">
+          <div class="bzr-step-n bzr-step-amber">4</div>
+          <div class="bzr-step-txt"><strong>The seven questions</strong><span>What I sell. Who I serve. Why they buy. My price or pricing direction. How customers find me. How I deliver consistently. What I need next.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="width:340px; flex-shrink:0; display:flex; align-items:center; padding:24px 40px 24px 0;">
+      <img src="assets/s12-photo.jpg" alt="Entrepreneur preparing to present their business" style="width:100%; height:440px; object-fit:cover; border-radius:14px; display:block; box-shadow:0 8px 32px rgba(0,0,0,0.14);">
+    </div>
+
+    <p class="bzr-facilitator-note">1:05 PM | Ends 1:20</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S13 . DRAFT YOUR PITCH
+════════════════════════════════════════ -->
+<section class="bzr-slide-light" data-background-color="#FFFFFF">
+  <div class="bzr-canvas bzr-row">
+
+    <svg class="bzr-doodle" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="1198" cy="608" r="6"   stroke="#016B78" stroke-width="1.5"/>
+        <circle cx="1220" cy="592" r="3.5" fill="#D4861A"/>
+        <circle cx="1242" cy="612" r="5"   stroke="#016B78" stroke-width="1.2"/>
+        <circle cx="66"  cy="650" r="4"   fill="#D4861A"/>
+        <circle cx="86"  cy="638" r="2.5" fill="#016B78"/>
+        <line x1="1214" y1="62" x2="1232" y2="62" stroke="#016B78" stroke-width="1.8"/>
+        <line x1="1223" y1="53" x2="1223" y2="71" stroke="#016B78" stroke-width="1.8"/>
+        <path d="M58 660 Q80 634 102 660" stroke="#D4861A" stroke-width="1.2"/>
+      </g>
+    </svg>
+
+    <div class="bzr-body bzr-body-wide">
+      <h2>Draft Your Pitch</h2>
+      <div class="bzr-rule"></div>
+      <p class="bzr-prompt">Open your workbook to Part 3.</p>
+      <p class="bzr-lead">Use what you built across Sessions 1 to 4. Write one sentence for each of the seven prompts. You do not need to memorize it today. You need a first draft to refine before Session 5.</p>
+      <ul class="bzr-list">
+        <li>My business sells...</li>
+        <li class="fragment fade-up">My customer is...</li>
+        <li class="fragment fade-up">They buy because...</li>
+        <li class="fragment fade-up">My price or pricing direction is...</li>
+        <li class="fragment fade-up">Customers find me through...</li>
+        <li class="fragment fade-up">I deliver by...</li>
+        <li class="fragment fade-up">My next step is...</li>
+      </ul>
+      <div class="bzr-dark-bar fragment fade-up">Read your draft out loud once before you leave. If it takes longer than ninety seconds, it needs to be shorter.</div>
+    </div>
+    <p class="bzr-facilitator-note">1:20 PM | Ends 1:50</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     S14 . CLOSING BRIDGE
+════════════════════════════════════════ -->
+<section class="bzr-slide-dark" data-background-color="#0D2B31" data-no-footer>
+  <div class="bzr-canvas bzr-col" style="justify-content:flex-start; padding:48px 48px; gap:18px;">
+
+    <h2 style="color:#fff; margin-bottom:0;">What Comes Next</h2>
+    <div class="bzr-amber-rule"></div>
+
+    <div class="bzr-examples">
+      <p class="bzr-ex-line">Session 4 creates consistency.</p>
+      <p class="bzr-ex-line fragment fade-up">Session 5 turns the business into a clear presentation and a next-step plan.</p>
+    </div>
+
+    <p style="color:#fff; font-size:1rem; font-weight:700; margin:16px 0 8px 0; letter-spacing:0.02em;">Next Session: Saturday, June 6 | 10:00 AM to 2:00 PM</p>
+
+    <div class="bzr-final-quote fragment fade-up">You got it out of your head and onto paper. That is what today was for.</div>
+
+    <div style="margin-top:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.15);">
+      <p style="color:#D4861A; font-size:1.1rem; font-weight:700; margin:0 0 4px 0;">Ahmad Bazzi</p>
+      <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-style:italic; margin:0 0 12px 0;">Founder and Lead Strategist, Forward Project X</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">(313) 743-3273</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">forwardprojectx.com</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">a.a.bazzi@forwardprojectx.com</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:0.9rem; margin:0 0 4px 0;">@FPXconsulting</p>
+      <p style="color:rgba(255,255,255,0.4); font-size:0.78rem; margin:8px 0 0 0;">290 Town Center Dr, Suite 420D . Dearborn, MI 48126</p>
+    </div>
+
+    <div style="position:absolute; bottom:48px; right:48px; display:flex; align-items:center; gap:24px; opacity:0.9;">
+      <img src="assets/access-logo.png" alt="ACCESS" style="height:36px; filter:brightness(0) invert(1);">
+      <div style="width:1px; height:36px; background:rgba(255,255,255,0.25);"></div>
+      <img src="assets/fpx-logo.png" alt="Forward Project X" style="height:36px; filter:brightness(0) invert(1);">
+      <div style="width:1px; height:36px; background:rgba(255,255,255,0.25);"></div>
+      <img src="assets/hamtramck-bazaar-logo.png" alt="Hamtramck Bazaar" style="height:36px; filter:brightness(0) invert(1);">
+    </div>
+
+  </div>
+</section>
+
+
+</div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+
+/* LOADER */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const l = document.getElementById('bzr-loader');
+    l.style.opacity = '0';
+    l.style.pointerEvents = 'none';
+    setTimeout(() => l.style.display = 'none', 400);
+  }, 300);
+});
+
+/* REVEAL */
+Reveal.initialize({
+  controls: false, controlsTutorial: false,
+  progress: true, slideNumber: false,
+  hash: true, keyboard: true,
+  mouseWheel: false,
+  transition: 'slide', transitionSpeed: 'default',
+  backgroundTransition: 'fade',
+  center: false, margin: 0,
+  width: 1280, height: 720,
+  minScale: 0.2, maxScale: 2.0,
+  fragments: true, fragmentInURL: false,
+});
+
+let wheelCooldown = false;
+window.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  if (wheelCooldown) return;
+  wheelCooldown = true;
+  setTimeout(() => { wheelCooldown = false; }, 300);
+  if (e.deltaY > 0) {
+    Reveal.next();
+  } else {
+    Reveal.prev();
+  }
+}, { passive: false });
+
+/* LOGO FOOTER INJECTION */
+Reveal.on('ready', () => {
+  const slides = document.querySelectorAll('.reveal .slides section');
+  document.getElementById('bzr-tot').textContent = String(slides.length).padStart(2, '0');
+
+  slides.forEach(slide => {
+    if (slide.hasAttribute('data-no-footer')) return;
+    const f = document.createElement('div');
+    f.className = 'bzr-slide-footer';
+    f.innerHTML = `
+      <img src="assets/access-logo.png"           alt="ACCESS"           class="bzr-footer-logo">
+      <div class="bzr-footer-sep"></div>
+      <img src="assets/fpx-logo.png"              alt="Forward Project X" class="bzr-footer-logo">
+      <div class="bzr-footer-sep"></div>
+      <img src="assets/hamtramck-bazaar-logo.png" alt="Hamtramck Bazaar"  class="bzr-footer-logo">
+    `;
+    const canvas = slide.querySelector('.bzr-canvas');
+    if (canvas) {
+      canvas.appendChild(f);
+    } else {
+      slide.appendChild(f);
+    }
+  });
+
+  updateCounter();
+});
+
+/* COUNTER */
+function updateCounter() {
+  document.getElementById('bzr-cur').textContent =
+    String(Reveal.getState().indexh + 1).padStart(2, '0');
+}
+Reveal.on('slidechanged', updateCounter);
+
+</script>
+</body>
+</html>
